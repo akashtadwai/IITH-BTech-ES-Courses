@@ -1,0 +1,11 @@
+Problem Statement 
+
+Let n[0], ..., n[k-1] be integers greater than 1, (moduli or divisors). N is the product of n[i]. 
+N = n[0] * n[1] * n[2]...*n[k-1] 
+The Chinese remainder theorem asserts that if the n[i] are pairwise coprime, and if a[0], ..., a[k-1] are integers such that 0 a a[i] < n[i] for every i, then there is one and only one integer x, such that 0 a. x < N and the remainder of the Euclidean division of x by n[i] is a[i] for every i. That is, x % n[0] = a[0], x % n[1] = a[1], 
+x % n[k-1] = a[k-1]. 
+Input: The first line has k. Each of the next k lines has a pair of numbers, n[i], k[i] separated by a space. The input is valid if it follows all the conditions of 'a' and 'n' as mentioned in the Chinese remainder theorem. 
+Output: The program should output 'INVALID' (failing a predicate) in case the input is invalid. If the input is valid, the value of x must be displayed. You need NOT handle it if the input is invalid, but such an x exists. 
+Example: Input: 2 5 1 7 3 Output: 31 Input: 2 5 1 10 2 Output: INVALID 
+Sample Input File : input.txt
+
