@@ -1,0 +1,59 @@
+Design Document of Bitwise
+
+Choice of data types:
+        1. I chose  int data type for inputs because inputs all will be in range of integer
+            as given in the question.
+
+Flow of Program:
+        1. Program scans inputs from the user. And then, input is received. 2 elements are recieved as input.
+        2. I have checked if any of the elements are negative, if any of them is negative then I printed Error message and asked 
+            user to enter Only The Valid Non-negative Integers. 
+        3. If the input elements are valid inputs, then we have to find the Hamming distance between the two elements.
+        4. I have used the algorithm that if we count the no. of 1's in the BITWISE XOR of two integers we get the required answer, i.e, 
+            the number of corresponding bit positions where the two numbers are different in their equivalent binary representation.
+        5. I have found XOR between two numbers by '^' operator b/w two numbers.
+        6. Now to find the no. of 1's in the resultant XOR value of those two numbers, I have used  Brian Kernighan’s Algorithm, which is described as follows,
+        7.  1  Initialize cnt: = 0
+            2  If integer 'n' is not zero
+                (a) Do bitwise & with (n-1) and assign the value back to n
+                        n: = n&(n-1)
+                (b) Increment count by 1
+                (c) go to step 2
+            3  Else return cnt
+        8. Explanation of the Algorithm:
+            So if we subtract a number by 1 and do bitwise & with itself (n & (n-1)), 
+            we unset the rightmost set bit. If we do n & (n-1) in a loop and count the no of times loop executes we get the set bit count.
+        9. Example : (To calculate No. of Set Bits in an Integer)
+                   n =  9 (1001)
+                   cnt = 0
+
+                   Since 9 > 0, subtract by 1 and do bitwise & with (9-1)
+                   n = 9&8  (1001 & 1000)
+                   n = 8
+                   cnt  = 1
+
+                   Since 8 > 0, subtract by 1 and do bitwise & with (8-1)
+                   n = 8&7  (1000 & 0111)
+                   n = 0
+                   cnt = 2
+
+                   Since n = 0, return cnt which is 2 now.
+
+Error Handling:
+        1. If any one of the input elements is negative I have printed error message and asked user to enter elements again. 
+
+Pseudo Code:
+
+
+            def Hammingdistance(a,b):
+                n= a xor b
+                cnt = 0
+                while (n): 
+                    n &= (n-1)  
+                    cnt+= 1
+                return cnt
+            a,b=int(input())
+            while(a<0 or b<0):
+                print("Please enter the Valid Positive Integers")
+                a,b=int(input())
+            print("The Hamming Distance b/w a and b is", Hammingdistance(a,b))

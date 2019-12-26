@@ -1,0 +1,38 @@
+Question 1:
+    1)User enters string as input.
+    2)Functionality inputs:
+        'Store' prints head and tail
+        'Ascend'-Sorts the alphabets based on No. of Duplicates.
+        'Print'-Print each alphabet with number of duplicates
+        'Remove T', where T is an integer, removes extra alphabet if it occurs more than T times consecutively and prints the linkedlist
+        '?' to terminate the input sequence.
+
+Question 2:
+    1)User enters a sequence of numbers and presses enter to stop entering numbers.
+    2)Functionality inputs- exactly as stated in the Question.
+    3) '?' to terminate the input sequence
+
+Question 3:
+    1)User enters the number of vertices and input format exactly as provided in the question,i.e, 
+    2)Enter 'E' and enter two vertices and weight to add edge to the graph
+      Enter 'a' and a vertex to find Neighbours of that vertex
+      Enter 'b' to print all vertices
+      Enter 'c' and enter two vertices to find edge weight between them
+      Enter 'd' and enter a vertex to find whether that vertex exists in the graph
+      Enter 'e' and enter two vertices to find whether an edge exists between them
+      Enter '?' to stop the input sequence
+
+Question 4:
+    1)User enters the number of vertices and input format exactly as provided in the question,i.e, 
+    2)'E u v w' - u,v,w are integers, this adds edge to the graph.
+      'F'- To Find connected components in graph
+      'SP src'- where src is vertex in the graph to find Shortest paths to all connected components.
+    3)'?' to end the user input.
+
+Question 5: 
+    1) User enters the number of vertices and input format exactly as provided in the question,i.e,
+    2) 'E u v w' - u,v,w are integers, this adds edge to the graph.
+       Press any other charcter other than 'E' to terminate input.
+
+       
+

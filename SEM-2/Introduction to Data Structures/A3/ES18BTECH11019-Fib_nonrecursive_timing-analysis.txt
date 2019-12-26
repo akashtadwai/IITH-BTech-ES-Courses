@@ -1,0 +1,25 @@
+8
+-1
+Invalid Input
+0.000000 is the time taken.
+1
+0.000006 is the time taken.
+The 1 Fibonacci number is 0
+2
+0.000006 is the time taken.
+The 2 Fibonacci number is 1
+10
+0.000006 is the time taken.
+The 10 Fibonacci number is 34
+15
+0.000007 is the time taken.
+The 15 Fibonacci number is 377
+20
+0.000007 is the time taken.
+The 20 Fibonacci number is 418125
+25
+0.000008 is the time taken.
+The 25 Fibonacci number is 46368
+40
+0.000011 is the time taken.
+The 40 Fibonacci number is 63245986

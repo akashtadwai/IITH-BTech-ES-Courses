@@ -1,0 +1,25 @@
+8
+1
+1
+0.000006 is the time taken.
+9
+9
+0.000006 is the time taken.
+99
+99
+0.000006 is the time taken.
+143
+143
+0.000006 is the time taken.
+1000
+1000
+0.000010 is the time taken.
+6174
+6174
+0.000028 is the time taken.
+9999
+9999
+0.000037 is the time taken.
+10000
+10000
+0.000037 is the time taken.

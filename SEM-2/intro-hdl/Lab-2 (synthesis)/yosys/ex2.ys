@@ -1,0 +1,8 @@
+read_verilog ex2.v
+show -colors 3 -pause
+proc
+show -colors 3 -pause
+opt
+show -colors 3 -pause
+splitnets -ports
+show -colors 3 -pause

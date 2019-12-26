@@ -1,0 +1,7 @@
+{signal: [
+  {name: 'a',   wave: 'p.....|...'},
+  {name: 'b',   wave: 'hlhlhl|hlh'},
+  {name: 'cin', wave: 'h.l.h.|l..'},
+  {name: 's',   wave: 'hl.h.l..hl.hl|.h.l.h', period: 0.5},
+  {name: 'cout',wave: 'hlhlhlhlhlhlh|lhlhlh', period: 0.5}
+]}

@@ -1,0 +1,65 @@
+$date
+	Wed Mar 13 16:14:28 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module counter_sm $end
+$var wire 1 ! clk $end
+$var reg 2 " p [1:0] $end
+$var reg 2 # q [1:0] $end
+$upscope $end
+$scope module tb $end
+$var wire 1 $ rest $end
+$var wire 3 % q [2:0] $end
+$var wire 1 & min_tick $end
+$var wire 1 ' max_tick $end
+$var reg 1 ( clk $end
+$var reg 1 ) clr $end
+$var reg 3 * d [2:0] $end
+$var reg 1 + en $end
+$var reg 1 , load $end
+$var reg 1 - reset $end
+$var reg 1 . up $end
+$scope module dut $end
+$var wire 1 ( clk $end
+$var wire 1 ) clr $end
+$var wire 3 / d [2:0] $end
+$var wire 1 + en $end
+$var wire 1 , load $end
+$var wire 3 0 q [2:0] $end
+$var wire 1 $ reset $end
+$var wire 1 . up $end
+$var wire 1 & min_tick $end
+$var wire 1 ' max_tick $end
+$var reg 3 1 next [2:0] $end
+$var reg 3 2 regs [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 2
+bx 1
+bx 0
+b0 /
+0.
+1-
+0,
+0+
+b0 *
+0)
+x(
+x'
+x&
+bx %
+z$
+bx #
+bx "
+z!
+$end
+#10
+0-

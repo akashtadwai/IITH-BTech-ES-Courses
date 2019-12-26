@@ -1,0 +1,25 @@
+These files contain code for CSWAP gate discussed in class.
+
+You can simulate the testbench using Icarus Verilog, which is
+a free compiler. Install it from the http://iverilog.icarus.com/.
+
+Run a testbench as (type on your console on Raspberry Pi):
+
+$ iverilog -o sim cswap_tb.v cswap.v
+$ vvp sim #(or just ./sim)
+
+
+--
+Full adder using cswap gates: cswap_fa.v
+
+$ iverilog -o sim cswap_fa_tb.v cswap_fa.v
+$ vvp sim
+
+It produces fa.vcd, which can be viewed in gtkwave.
+
+-- 
+A wide adder using parameterisation of FA done above.
+$ iverilog -o sim cswap_wide_adder_tb.v cswap_wide_adder.v
+$ vvp sim
+
+

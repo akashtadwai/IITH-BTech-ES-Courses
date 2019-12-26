@@ -1,0 +1,48 @@
+Design Document of Pointers
+
+Choice of data types:
+        1. I chose char array of length 11 as data type for storing string as the max. length for printing without 
+            error message is 10.
+        2. I have took int data type start,end pointers of string while reversing as string length is atmost 10.
+        3. I have took a flag variable named 'cnt' as int, which stores the length of input string.
+
+Flow of Program:
+        1. Program scans inputs from the user. And then, input is received.
+        2. I have taken input character by character,and I incremted cnt variable to store the lenght of string.
+        3. If the length of string entered is less than or equal to 10, I have reversed the string and stopped execution of program.
+        3. if(cnt<=10) it means that the input is a valid string, for it we should print the result.
+        4. For reversing the string I have revresed it by the following algorithm,
+                start=0,end=len(str-1)
+                while(start<end):
+                    swap(str[start],str[end])
+                    start++
+                    end--
+        5. For swap function I used pass by reference method.
+        6. If the entered input string length is greater than 10 then the error message will be printed and program
+            asks for the input again from the user
+Error Handling:
+        1. If the input string length is other than a 10 Error message will be printed
+        2. If the input is NULL string cnt will be 0 and Error message will be printed.
+
+Pseudo Code:
+            def swap(char *a,char *b):
+                char temp
+                temp=*a
+                *a=*b
+                *b=temp
+            def rev(char *str):
+                l=strlen(str)
+                s=0,e=l-1
+                while(s<e):
+                    swap(&str[s],&str[e])
+                    s++
+                    e--
+            str[11]
+            input(str)
+            if(strlen(str)<=10):
+                rev(str)
+                print(str)
+            else:
+                ask user for input again
+            
+            

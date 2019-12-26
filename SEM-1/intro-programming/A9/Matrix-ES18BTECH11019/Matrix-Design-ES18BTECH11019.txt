@@ -1,0 +1,108 @@
+Design Document of Matrix
+
+Choice of data types:
+        1. To all except inverse matrix I chose  int data type for inputs because inputs all will be in range of integer
+            as given in the question.
+        2. To the inverse matrix I chose float data type as inverse can be real matrix too.
+
+Flow of Program:
+        1. Program scans inputs from the user. And then, inputs are received. 
+            Dimensions of two arrays and respective elements are received as inputs.
+        2. I have checked if the Dimensions of matrices match so that we can multiply them.
+            else if the dimensions doesnt match I have printed error message and
+            asked user to enter inputs again.
+        3. If the input elements are valid inputs, then we have to find the multiplication 
+            of matrices and inverse of the resultant matrix if exists.
+        4. Multiplication of matrices:
+            Let C be a new matrix of the appropriate size, the following algorithm calculates multiplication
+        for i from 0 to n-1:
+                for j from 0 to p-1:
+                    Let sum = 0
+                    for k from 0 to m-1:
+                        Set sum ← sum + Aik × Bkj
+                        Set Cij ← sum
+        Return C
+        5. Inverse of matrix:
+            1) We can find the inverse of a matrix only if its a square matrix and det is non zero.
+            2) For calculating inverse of a matrix we need cofactor matrix, adjoint and determinant
+            
+        6. Cofactor Matrix:
+                for row from 0 to n-1:
+                    for col from 0 to n-1:
+                        if (row != p && col != q): //Co-factor of element A[p][q]
+                            temp[i][j++] ← A[row][col]
+                        if (j == n - 1) 
+                            j ← 0
+                            i++
+        7. Determinant of Matrix: (Minor*Cofactor of elements)
+            D = 0
+            if (n == 1):
+                return A[0][0]
+            flag = 1
+            for k from 0 to n-1:
+                cofactor(n, A, temp, 0, k)
+                D += flag * A[0][k] * determinant(n - 1, temp)
+                flag = -flag
+            return D
+        8. We find Adjoint matrix by Transposing Co-Factor Matrix.
+        9. Inverse of matrix=Adjoint(A)/Det(A).
+
+
+Error Handling:
+        1.If the Dimensions of matrices doesn't match the program prints error message
+            and asks user to input the elements again.
+        2. If the inverse of matrix doesn't exist or the matrix is singular
+            the program prints error message that Inverse doesn't exist.
+
+Pseudo Code:
+            def cofactor(n,A,temp,p,q):
+                for row from 0 to n-1:
+                    for col from 0 to n-1:
+                        if (row != p && col != q): //Co-factor of element A[p][q]
+                            temp[i][j++] ← A[row][col]
+                        if (j == n - 1) 
+                            j ← 0
+                            i++
+            def det(n,A):
+                D = 0
+                if (n == 1):
+                    return A[0][0]
+                flag = 1
+                for k from 0 to n-1:
+                    cofactor(n, A, temp, 0, k)
+                    D += flag * A[0][k] * det(n - 1, temp)
+                    flag = -flag
+                return D
+            def adjoint(A,adj):
+                if (N == 1):
+                    adj[0][0] = 1
+                    return
+                sign = 1
+                for i from 0 to n-1:
+                    for j from 0 to n-1:
+                        cofactor(n,A, temp, i, j)
+                        sign = ((i + j) % 2 == 0) ? 1 : -1
+                        adj[j][i] = (sign) * (det(N - 1, temp))
+            def inv(n,A,temp):
+                det = determinant(N, A)
+                if (det == 0):  print("Matrix is Singular, inverse not exist)
+                adjoint(N, A, adj)
+                for i from 0 to n-1:
+                    for j from 0 to n-1:
+                        inverse[i][j] = adj[i][j] / (float)(det)
+                print(inverse matrix)
+            def multiply(A,m,n,B,p,q):
+                for i from 0 to n-1:
+                    for j from 0 to p-1:
+                        Let sum = 0
+                        for k from 0 to m-1:
+                            Set sum ← sum + Aik × Bkj
+                            Set Cij ← sum
+                inverse(n,C,temp)
+            Taking inputs
+            if(dimensions dont match): print(Error!)
+            multiply(A,m,n,B,p,q)
+
+
+
+        

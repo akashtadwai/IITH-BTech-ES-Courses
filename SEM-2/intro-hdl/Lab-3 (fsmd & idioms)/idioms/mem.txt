@@ -1,0 +1,4 @@
+//addr are @hhh.. values are binary strings  
+@00A
+10101100 11110000 1x000x11 11110101 01011010 01001100
+XxxxZzzz 00000000

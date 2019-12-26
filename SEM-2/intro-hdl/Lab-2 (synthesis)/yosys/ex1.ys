@@ -1,0 +1,6 @@
+read_verilog ex1.v
+show -colors 3 -pause
+proc
+show -colors 3 -pause
+opt
+show -colors 3 -pause

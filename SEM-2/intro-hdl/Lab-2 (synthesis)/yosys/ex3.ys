@@ -1,0 +1,16 @@
+read_verilog ex1.v
+show -colors 3 -pause
+proc; opt;
+show -colors 3
+ls
+cd ex1
+dump $2
+select $2
+show -colors 3 -pause
+select t:$add
+show -colors 3 -pause
+read_verilog ex3.v
+select a:sumstuff
+select prod %ci
+show prod %ci
+show prod %ci3
