@@ -2,7 +2,7 @@
 Fortran source codes for some of Numerical method techniques taught.  
 
 ### Sequence of Algorithms
-- Practice_eqns - Contains some basic Verilog Codes given in slides  
+- Practice_eqns - Contains some basic Fortran Codes given in slides  
 - gauss - Gauss Elimination Method
 - Picards Iteration 
 - Newton Raphson
