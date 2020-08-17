@@ -1,0 +1,278 @@
+\documentclass[english,a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{iftex}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+\geometry{verbose,tmargin=4cm,bmargin=3cm,lmargin=1.8cm,rmargin=1.5cm,headheight=2.7cm,headsep=1cm,footskip=3cm}
+\usepackage{array}
+%
+\def \hsp {\hspace{3mm}}
+%
+\makeatletter
+\providecommand{\tabularnewline}{\\}
+\makeatother
+%
+\ifxetex
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\newfontfamily\nakulafont[AutoFakeBold=2]{Nakula}
+\newfontfamily\liberationfont{Liberation Sans Narrow}
+\newfontfamily\liberationsansfont{Liberation Sans}
+\fi
+%
+\usepackage{tikz}
+\usepackage{xcolor}
+%
+% 
+\definecolor{circleorange}{rgb}{1,0.17,0.08}
+\definecolor{darkorange}{rgb}{1,0.27,0.1}
+\definecolor{orange2}{rgb}{1,0.5,0.15}
+\definecolor{orange3}{rgb}{1,0.65,0.25}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\newcommand{\Omit}[1]{}
+\fancypagestyle{plain}{
+  \fancyhead[LO]
+  {
+\textbf{Akash Tadwai} \newline 
+Department of Engineering Science \newline
+Indian Institute of Technology Hyderabad \newline
+{\bf Email:} {es18btech11019@iith.ac.in} \newline
+	  }
+%
+	  \fancyhf[ROH]{
+\begin{tikzpicture}[scale=0.25,every node/.style={transform shape}]
+\draw [fill=circleorange,circleorange] (5,10) circle (1.15); 
+\fill [darkorange] (5.06,8) -- (5.06,2) -- (7.3,1.2) -- (7.3,8.8) -- (5.06,8);
+\fill [darkorange] (4.94,8) -- (4.94,2) -- (2.7,1.2) -- (2.7,8.8) -- (4.94,8);
+\fill [orange2]    (7.4,8.4) -- (7.4,1.6) -- (8.2,1.2) -- (8.2,8.8) -- (7.4,8.4);
+\fill [orange2]    (2.6,8.4) -- (2.6,1.6) -- (1.8,1.2) -- (1.8,8.8) -- (2.6,8.4);
+\fill [orange3]    (8.3,8.4) -- (8.3,1.6) -- (9.0,1.2) -- (9.0,8.8) -- (8.3,8.4);
+\fill [orange3]    (1.7,8.4) -- (1.7,1.6) -- (1.0,1.2) -- (1.0,8.8) -- (1.7,8.4);
+\fill [yellow1]    (9.1,8.4) -- (9.1,1.6) -- (9.7,1.2) -- (9.7,8.8) -- (9.1,8.4);
+\fill [yellow1]    (0.9,8.4) -- (0.9,1.6) -- (0.3,1.2) -- (0.3,8.8) -- (0.9,8.4);
+\ifxetex
+\node [scale=2.1] at (5,-0.1)  {   {\bf {\nakulafont  भारतीय प्रौद्योगिकी संस्थान हैदराबाद }} };
+\node [scale=1.8] at (5,-1.2) {   {\bf {\liberationsansfont Indian Institute of Technology Hyderabad}} };
+\fi
+\end{tikzpicture}
+		  }
+%
+\renewcommand\headrule
+ {
+\begin{tikzpicture}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\draw[line width=0.75mm, yellow1] (0,0) -- (\textwidth,0);
+\end{tikzpicture} 
+ }
+}
+\pagestyle{plain}
+
+\usepackage{blindtext}
+\title{\textbf{\underline{\Huge{Toy Cool Programs}}}}
+\author{Akash Tadwai}
+\date{\today}
+\begin{document}
+\maketitle
+\section*{\centering{\underline{\Large{Incorrect Cool Programs}}}}
+
+\subsection*{\textbf{Program - I}:}
+\textbf{Cause :} Type Identifier should begin with capital letter \\
+\textbf{Error:} "incorrect1.cl", line 3: syntax error at or near OBJECTID = string
+
+
+\qquad \hspace{1mm}Compilation halted due to lex and parse errors
+
+\subsection*{\textbf{Program - II}:}
+\textbf{Cause :} Non-escaped characters shouldnot be present \\
+\textbf{Error:} "incorrect2.cl", line 3: syntax error at or near OBJECTID = string
+
+
+\qquad \hspace{1mm}Compilation halted due to lex and parse errors
+
+\subsection*{\textbf{Program - III}:}
+\textbf{Cause :} Right Star is missing in comment \\
+\textbf{Error:} "incorrect3.cl", line 7: syntax error at or near ERROR = EOF in comment
+
+
+\qquad \hspace{1mm}Compilation halted due to lex and parse errors
+
+
+\subsection*{\textbf{Program - IV}:}
+\textbf{Cause :} case sensitive keyword \\
+\textbf{Error:} "incorrect4.cl", line 2: syntax error at or near TYPEID = False
+
+
+\qquad \hspace{1mm}Compilation halted due to lex and parse errors
+
+\subsection*{\textbf{Program - V}:}
+\textbf{Cause :} Zero Width Space is not recognized by cool \\
+\textbf{Error:}"incorrect5.cl", line 5: syntax error at or near ERROR = \textbackslash342
+
+
+\qquad \hspace{1mm}Compilation halted due to lex and parse errors
+
+\newpage
+
+\section*{\centering{\underline{\Large{Correct Cool Programs}}}}
+The following are some common MIPS instructions which are used in MIPS assembly language.
+\begin{itemize}
+    \item \textbf{\textit{addiu}} $\rightarrow$ Add immediate unsigned (No overflow) 
+    \item \textbf{\textit{sw}} $\rightarrow$ Store Word
+    \item \textbf{\textit{move}} $\rightarrow$ Move value stored at address to registers
+    \item \textbf{\textit{bne}} $\rightarrow$ Branch on not equal
+    \item \textbf{\textit{la}} $\rightarrow$ Load address
+    \item \textbf{\textit{li}} $\rightarrow$ Load immediate
+    \item \textbf{\textit{jal}} $\rightarrow$ Jump and link
+    \item \textbf{\textit{\$so - \$s7}} $\rightarrow$ Saved values representing final computed results
+    \item \textbf{\textit{\$to - \$t9}} $\rightarrow$ Temporary variables
+    \item \textbf{\textit{\$ao - \$a3}} $\rightarrow$ Arguments for a subroutine
+    \item \textbf{\textit{\$ra}} $\rightarrow$ Return address
+    
+    \item \textbf{class\_nameTab} section contains information about the classes like str\_const parts
+    \item \textbf{str\_const(I)} sections contains all the string literals in our code section.
+    \item \textbf{Function calls} corresponds to using branch instructions in the assembly
+    
+\end{itemize}
+       The MIPS generated codes for the correct programs are as follows:
+ \subsection*{\textbf{Program - I }: Exponent}
+ 
+\begin{lstlisting}[language=Haskell,caption=\textit{exponent.s}]
+Main.exponent:
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	la	$a0 str_const0
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	move	$a0 $s0
+	bne	$a0 $zero label6
+	la	$a0 str_const4
+	li	$t1 1
+	jal	_dispatch_abort
+\end{lstlisting}
+\newpage
+
+ \subsection*{\textbf{Program - II}: LCM}
+ 
+\begin{lstlisting}[language=Haskell,caption=\textit{LCM.s}]
+Main.LCM:
+	addiu	$sp $sp -16
+	sw	$fp 16($sp)
+	sw	$s0 12($sp)
+	sw	$ra 8($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	la	$a0 str_const0
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	move	$a0 $s0
+	bne	$a0 $zero label10
+	la	$a0 str_const4
+	li	$t1 1
+	jal	_dispatch_abort
+\end{lstlisting}
+
+\vspace{10mm}
+ \subsection*{\textbf{Program - III}: Parity Check}
+ 
+\begin{lstlisting}[language=Haskell,caption=\textit{parity.s}]
+Main.parity:
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	la	$a0 str_const0
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	move	$a0 $s0
+	bne	$a0 $zero label11
+	la	$a0 str_const4
+	li	$t1 1
+	jal	_dispatch_abort
+\end{lstlisting}
+\newpage
+
+ \subsection*{\textbf{Program - IV}: Pascal Traingle}
+\begin{lstlisting}[language=Haskell,caption=\textit{Pascal\_triangle.s}]
+Main.Pascal_traingle:
+	addiu	$sp $sp -20
+	sw	$fp 20($sp)
+	sw	$s0 16($sp)
+	sw	$ra 12($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	la	$a0 str_const0
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	move	$a0 $s0
+	bne	$a0 $zero label0
+	la	$a0 str_const4
+	li	$t1 1
+	jal	_dispatch_abort
+\end{lstlisting}
+
+\vspace{10mm}
+
+ \subsection*{\textbf{Program - V}: Subsequence Check}
+
+\begin{lstlisting}[language=Haskell,caption=\textit{subsequence.s}]
+Main.subsequence:
+Main.main:
+	addiu	$sp $sp -12
+	sw	$fp 12($sp)
+	sw	$s0 8($sp)
+	sw	$ra 4($sp)
+	addiu	$fp $sp 4
+	move	$s0 $a0
+	la	$a0 str_const0
+	sw	$a0 0($sp)
+	addiu	$sp $sp -4
+	move	$a0 $s0
+	bne	$a0 $zero label13
+	la	$a0 str_const5
+	li	$t1 1
+	jal	_dispatch_abort
+\end{lstlisting}
+
+
+\vspace{10mm}
+
+\centering{{\LaTeX} generated document}
+\newpage    
+
+
+\end{document}

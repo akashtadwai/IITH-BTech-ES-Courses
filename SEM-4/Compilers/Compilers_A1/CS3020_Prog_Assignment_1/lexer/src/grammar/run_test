@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+if [[ -f "./log.txt" ]]; then
+    echo "log.txt already exists, deleting...."
+    rm -v -rf "./log.txt"
+fi
+
+if [[ -d "../output" ]]; then
+    echo "output directory already exists, deleting..."
+    rm -rf ../output
+fi
+mkdir output
+touch log.txt
+for path in ../grading/*.cool; do
+    name="${path##*/}"
+    ./lexer "${path}" >output/"$name".out
+done
+touch log.txt
+mv -v -f ./output ../
+
+for path in ../output/*.out; do
+    name=${path##*/}
+    echo "${name}" >>log.txt
+    colordiff ../grading/"$name" ../output/"$name" >>log.txt
+done
