@@ -12,7 +12,7 @@ void insert(int data){
     temp->next=NULL;
    if(head==NULL){//when linkedlist is empty
        head=temp;
-       return;
+       return;  
    }
   while((temp2->next) != NULL)//appending the node at last and building links between nodes
   temp2=temp2->next;
