@@ -26,7 +26,7 @@ Raise an issue/ put up a pull request if any errors are found in the codes
 
  ├ SEM4
      ┬  Compilers-I
- 
+
  ├ SEM5
      ┬  Compilers-II
      ├  Computer Architecture
