@@ -1,0 +1,240 @@
+\documentclass[english,a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{iftex}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+\geometry{verbose,tmargin=4cm,bmargin=3cm,lmargin=1.8cm,rmargin=1.5cm,headheight=2.7cm,headsep=1cm,footskip=3cm}
+\usepackage{array}
+%
+\def \hsp {\hspace{3mm}}
+%
+\makeatletter
+\providecommand{\tabularnewline}{\\}
+\makeatother
+%
+\ifxetex
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\newfontfamily\nakulafont[AutoFakeBold=2]{Nakula}
+\newfontfamily\liberationfont{Liberation Sans Narrow}
+\newfontfamily\liberationsansfont{Liberation Sans}
+\fi
+%
+\usepackage{tikz}
+\usepackage{xcolor}
+%
+% 
+\definecolor{circleorange}{rgb}{1,0.17,0.08}
+\definecolor{darkorange}{rgb}{1,0.27,0.1}
+\definecolor{orange2}{rgb}{1,0.5,0.15}
+\definecolor{orange3}{rgb}{1,0.65,0.25}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\newcommand{\Omit}[1]{}
+\fancypagestyle{plain}{
+  \fancyhead[LO]
+  {
+\textbf{Akash Tadwai} \newline 
+Department of Engineering Science \newline
+Indian Institute of Technology Hyderabad \newline
+{\bf Email:} {es18btech11019@iith.ac.in} \newline
+	  }
+%
+	  \fancyhf[ROH]{
+\begin{tikzpicture}[scale=0.25,every node/.style={transform shape}]
+\draw [fill=circleorange,circleorange] (5,10) circle (1.15); 
+\fill [darkorange] (5.06,8) -- (5.06,2) -- (7.3,1.2) -- (7.3,8.8) -- (5.06,8);
+\fill [darkorange] (4.94,8) -- (4.94,2) -- (2.7,1.2) -- (2.7,8.8) -- (4.94,8);
+\fill [orange2]    (7.4,8.4) -- (7.4,1.6) -- (8.2,1.2) -- (8.2,8.8) -- (7.4,8.4);
+\fill [orange2]    (2.6,8.4) -- (2.6,1.6) -- (1.8,1.2) -- (1.8,8.8) -- (2.6,8.4);
+\fill [orange3]    (8.3,8.4) -- (8.3,1.6) -- (9.0,1.2) -- (9.0,8.8) -- (8.3,8.4);
+\fill [orange3]    (1.7,8.4) -- (1.7,1.6) -- (1.0,1.2) -- (1.0,8.8) -- (1.7,8.4);
+\fill [yellow1]    (9.1,8.4) -- (9.1,1.6) -- (9.7,1.2) -- (9.7,8.8) -- (9.1,8.4);
+\fill [yellow1]    (0.9,8.4) -- (0.9,1.6) -- (0.3,1.2) -- (0.3,8.8) -- (0.9,8.4);
+\ifxetex
+\node [scale=2.1] at (5,-0.1)  {   {\bf {\nakulafont  भारतीय प्रौद्योगिकी संस्थान हैदराबाद }} };
+\node [scale=1.8] at (5,-1.2) {   {\bf {\liberationsansfont Indian Institute of Technology Hyderabad}} };
+\fi
+\end{tikzpicture}
+		  }
+%
+\renewcommand\headrule
+ {
+\begin{tikzpicture}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\draw[line width=0.75mm, yellow1] (0,0) -- (\textwidth,0);
+\end{tikzpicture} 
+ }
+}
+\pagestyle{plain}
+
+\usepackage{blindtext}
+\title{\textbf{\underline{\Huge{Mini-Assignment- I }}}}
+\author{Akash Tadwai}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{enumerate}
+   \item[\textbf{1.}] \textbf{Differences between working of Compiler and Interpreter.}
+
+\begin{center}
+\begin{tabular}{ || m{18em} || m{18em} ||}
+\hline\hline
+\centering { \textbf{Compiler}} & \hspace{2.5cm}\textbf{Interpreter} \\
+\hline\hline
+Compiler scans the entire program and translates the whole of it into machine code at once. & Interpreter translates just one statement of the program at a time into machine code.\\ 
+\hline
+Compiler takes a lot of time to analyze the code, however the overall time taken to analyse the code is much faster. & Interpreter takes very less time to analyze the code whereas the overall time to execute the process is much slower.\\ 
+\hline
+Compiler always generates an intermediate object code and hence always need further linking. Hence more memory is needed. &  Interpreter doesn't generate an intermediate code and hence interpreter is highly efficient in terms of memory.\\ 
+\hline
+Execution and compilation are different, after compilation, we get an executable which we can run & Execution is a part of interpretation, so it is performed line by line.\\ 
+\hline
+A compiler generates the error message only after it scans the complete program and hence debugging is relatively harder. & Interpreter keeps translating the program continuously till the \textit{first error} is observed. If any error is spotted, it stops working and hence debugging becomes easy.\\ 
+\hline\hline
+\end{tabular}
+\end{center}
+\subsection*{\textbf{Error and Exception Handling}:}
+    \textbullet \quad \textbf{Compilers} :\\
+    Types or Sources of Error – There are two types of error: \textbf{Run-time} and \textbf{Compile-time}
+    \begin{itemize}
+  \item Compile time error occurs due to syntactic error. These occur before execution  of the program.
+  \item Run time error occurs due to lack of sufficient memory or memory conflicts. These occur during the execution time of the program.
+  \newpage
+  Exceptions are anomalous or exceptional conditions requiring special processing.
+  In \textbf{C++}, we can handle exceptions through, \textbf{Try, Catch, Throw} mechanisms.
+\end{itemize}
+ \textbullet \quad \textbf{Interpreters} : In interpreters errors are printed line after line. In languages such as Python, \textbf{try, Except, finally} are used to handle exceptions.
+ \subsection*{\textbf{Type information}:}
+ \begin{itemize}
+\item {{\textbf{Compilers }}}
+    \begin{itemize}
+        \item In Statistically typed languages such as C/C++ we have to specify the type of variables thus the compiler can catch a lot of bugs at the compilation stage itself.
+    \end{itemize}
+\item {\textbf{Interpreters}}
+    \begin{itemize}
+        \item In Dynamically typed languages the type of variable is known at run-time. Here the length of the code is shorter but type checking is difficult.
+    \end{itemize}
+\end{itemize}
+{\large\textbf{Memory Management}}\\~\\
+Memory management is the process of efficiently managing memory so that programs can run smoothly and can optimally access different system resources.
+\begin{itemize}
+\item {\textbf{Compilers}}
+    \begin{itemize}
+       \item There are three ways in which storage is allocated they are \textbf{Static allocation, Stack allocation and Heap allocation}.The compiler requests the Operating System to assign it a block of memory. This memory is used by compiler for executing the program. This memory is known as run time memory. This storage is divided to store generated target code and data objects. The size of generated code is fixed and it occupies space at the end. \\
+      Local variables memory is stored in stack. Dynamically created variables are stored in the heap and block of memory required for it is decided at the run time. The user is responsible for allocating and de-allocating the memory.
+    \end{itemize}
+\item {\textbf{Interpreters}}
+    \begin{itemize}
+        \item In some interpreted languages such as Python memory is assigned in Heap. Python memory manager takes care of unused memory variables and user don't need to worry about memory issues.
+        \item Python manages objects by using reference counting. \textbf{Garbage collection} relieves the programmer from performing manual memory management where the programmer specifies what objects to deallocate and return to the memory system and when to do so. Other similar techniques include stack allocation, region inference, memory ownership, and combinations of multiple techniques. Garbage collection may take a significant proportion of total processing time in a program and, as a result, can have significant influence on performance.
+    \end{itemize}
+\end{itemize}
+\newpage
+\item[\textbf{2.}] \large{\textbf{Lexical Analysers and Parsers.}} \\
+    \item {\textbf{GCC}}\\~\\
+        \textbullet \textbf{Lexer}
+        \begin{itemize}
+            \item The lexer in GNU GCC is contained in the file \textit{lex.c.}.It is a hand-coded lexer, and not implemented as a state machine.
+            \item It can understand C, C++ and Objective-C source code, and has been expanded to permit reasonably effective preprocessing of assembly language.
+            \item The lexer places the token it lexes into storage pointed to by the variable \textit{cur\_token} and after that increments it. This variable is imperative for correct diagnostic positioning.
+            \item The lexer does not consider whitespace to be a token in its own right. If whitespace (other than a new line) precedes a token, it sets the \textit{PREV\_WHITE} bit in the token’s flags. Each token has its line and col variables set to the line and column of the first character of the token.
+            \item New lines are treated specially; precisely how the lexer handles them is context-dependent. The C standard mandates that directives are ended by the primary unescaped newline character, even if it shows up within the middle of a macro extension.
+            \item Lexer is written to treat each of ‘\textbackslash r’, ‘\textbackslash n’, ‘\textbackslash r\textbackslash n’ and ‘\textbackslash n\textbackslash r’ as a single new line indicator. 
+        \end{itemize}
+    
+        \textbullet \textbf{Parser}
+            \begin{itemize}
+                \item The C and Objective-C parser is replaced by a hand-written recursive descent parser. Earlier It was parsed using Bison
+                \item Recursive descent parser is a kind of Top-Down Parser. A top-down parser builds the parse tree from the top to down, starting with the start non-terminal. A Predictive Parser is a special case of Recursive Descent Parser, where no Back Tracking is required.
+            \end{itemize}
+    
+        \newpage
+        
+        \item {\textbf{Clang}}\\~\\
+        \textbullet \textbf{Lexer}
+        \begin{itemize}
+            \item  The main interface to the Lexer and Preprocessor library is the large Preprocessor class. The core interface to the Preprocessor object (once it is set up) is the \textbf{Preprocessor::Lex} method, which returns the next Token from the preprocessor stream. There are two types of token providers that the preprocessor is capable of reading from: a buffer lexer (provided by the Lexer class) and a buffered token stream (provided by the TokenLexer class).
+            \item \textbf{Token Class:} The Token class is used to represent a single lexed token. Tokens are intended to be used by the lexer/preprocess and parser libraries, but are not intended to live beyond them (for example, they should not live in the ASTs).
+            \item Tokens occur in two forms: annotation tokens and normal tokens. Normal tokens are those returned by the lexer, annotation tokens represent semantic information and are produced by the parser, replacing normal tokens in the token stream.
+            \item \textbf{Lexer Class: } The Lexer class provides the mechanics of lexing tokens out of a source buffer and deciding what they mean. The Lexer is complicated by the fact that it operates on raw buffers that have not had spelling eliminated. 
+            \item \textbf{TokenLexer Class: }The TokenLexer class is a token provider that returns tokens from a list of tokens that came from somewhere else. It typically used for two things: 1) returning tokens from a macro definition as it is being expanded 2) returning tokens from an arbitrary buffer of tokens.
+        \end{itemize}
+        
+     \textbullet \textbf{Parser}
+     \begin{itemize}
+         \item The Parser library contains a \textbf{recursive-descent} parser that polls tokens from the preprocessor and notifies a client of the parsing progress. Historically, the parser used to talk to an abstract Action interface that had virtual methods for parse events
+     \end{itemize}
+
+    
+    \newpage
+
+ \item[\textbf{3.}] \textbf{Standard Flags and Optimisation passes used in Compilers.}
+\item {\textbf{Standard Flags}}
+    \begin{itemize}
+\item \textbf{-S}: Stops after the stage of compilation proper; will not assemble.  The output is in the form of an assembler code file for each non-assembler input file specified. By default, the assembler file name for a source file is made by replacing the suffix .c, .i, etc., with .s.Input files that don't require compilation are ignored.
+\item \textbf{-E}: Stop after the preprocessing stage; will not run the compiler proper.The output is in the form of preprocessed source code, which is sent to the standard output. Input files that don't require preprocessing are ignored.
+
+\item \textbf{-g}: Produce debugging information in the operating system's native format (stabs, COFF, XCOFF, or DWARF).  GDB can work with this debugging information.
+
+\item \textbf{-c}: This flag says not to run the linker.
+
+\item \textbf{-o}: \textbf{-o file} Place output in file 'file'.
+    \end{itemize} 
+    
+\item {\textbf{Optimisation Passes}}
+\\
+\begin{itemize}
+ \textbf{-O[level]} Sets the optimization level. If -O is not specified, then the default level is 1 if -g is not specified, and 0 if -g is specified. If a number is not specified with -O, then the optimization level is set to 2. The optimization levels are:
+\item \textbf{0}: A basic block is generated for each statement. No scheduling is done between statements. No global optimizations are done.
+\item \textbf{1}: Scheduling within extended basic blocks is performed. Some register allocation is performed. No global optimizations are performed.
+\item \textbf{2}: All level 1 optimizations are performed. In addition, traditional scalar optimizations, such as induction recognition and loop invariant motion are performed by the global optimizer.
+\item \textbf{3}: All level 1 and 2 optimizations are performed. In addition, this level enables more aggressive code hoisting and scalar replacement optimizations that may or may not be profitable.
+\end{itemize}
+ 
+ \begin{itemize}
+     \item \textbf{-Os}:Optimize for size.  -Os enables all -O2 optimizations that do not typically increase code size. -Os disables the following optimization flags: \\
+     \textit{ -falign-functions, -falign-jumps,  -falign-loops, -falign-labels,  -fprefetch-loop-arrays }
+It also enables -finline-functions, causes the compiler to tune for code size rather than execution speed, and performs further optimizations designed to reduce code size.
+ \item \textbf{-Og}:Optimize debugging experience.  -Og enables optimizations that do not interfere with debugging. It should be the optimization level of choice for the standard edit-compile-debug cycle, offering a reasonable level of optimization while maintaining fast compilation and a good debugging experience.
+ \end{itemize}
+\end{enumerate}
+\centering{{\LaTeX} generated document}
+
+\vspace{5cm}
+
+************END************
+\newpage    
+
+
+\end{document}

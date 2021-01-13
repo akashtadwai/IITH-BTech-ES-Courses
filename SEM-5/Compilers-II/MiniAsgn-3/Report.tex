@@ -1,0 +1,274 @@
+\documentclass[english,a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{iftex}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{enumerate} 
+\usepackage{amsmath}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ 
+  backgroundcolor=\color{grey},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={(*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1,                % start line enumeration with line 1000
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{red},       % keyword style
+  language=Haskell,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{blue},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+\geometry{verbose,tmargin=4cm,bmargin=3cm,lmargin=1.8cm,rmargin=1.5cm,headheight=2.7cm,headsep=1cm,footskip=3cm}
+\usepackage{array}
+%
+\def \hsp {\hspace{3mm}}
+%
+\makeatletter
+\providecommand{\tabularnewline}{\\}
+\makeatother
+%
+\ifxetex
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\newfontfamily\nakulafont[AutoFakeBold=2]{Nakula}
+\newfontfamily\liberationfont{Liberation Sans Narrow}
+\newfontfamily\liberationsansfont{Liberation Sans}
+\fi
+%
+\usepackage{tikz}
+\usepackage{xcolor}
+%
+% 
+\definecolor{circleorange}{rgb}{1,0.17,0.08}
+\definecolor{darkorange}{rgb}{1,0.27,0.1}
+\definecolor{orange2}{rgb}{1,0.5,0.15}
+\definecolor{orange3}{rgb}{1,0.65,0.25}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\newcommand{\Omit}[1]{}
+\fancypagestyle{plain}{
+  \fancyhead[LO]
+  {
+\textbf{Akash Tadwai} \newline 
+Department of Engineering Science \newline
+Indian Institute of Technology Hyderabad \newline
+{\bf Email:} {es18btech11019@iith.ac.in} \newline
+	  }
+%
+	  \fancyhf[ROH]{
+\begin{tikzpicture}[scale=0.25,every node/.style={transform shape}]
+\draw [fill=circleorange,circleorange] (5,10) circle (1.15); 
+\fill [darkorange] (5.06,8) -- (5.06,2) -- (7.3,1.2) -- (7.3,8.8) -- (5.06,8);
+\fill [darkorange] (4.94,8) -- (4.94,2) -- (2.7,1.2) -- (2.7,8.8) -- (4.94,8);
+\fill [orange2]    (7.4,8.4) -- (7.4,1.6) -- (8.2,1.2) -- (8.2,8.8) -- (7.4,8.4);
+\fill [orange2]    (2.6,8.4) -- (2.6,1.6) -- (1.8,1.2) -- (1.8,8.8) -- (2.6,8.4);
+\fill [orange3]    (8.3,8.4) -- (8.3,1.6) -- (9.0,1.2) -- (9.0,8.8) -- (8.3,8.4);
+\fill [orange3]    (1.7,8.4) -- (1.7,1.6) -- (1.0,1.2) -- (1.0,8.8) -- (1.7,8.4);
+\fill [yellow1]    (9.1,8.4) -- (9.1,1.6) -- (9.7,1.2) -- (9.7,8.8) -- (9.1,8.4);
+\fill [yellow1]    (0.9,8.4) -- (0.9,1.6) -- (0.3,1.2) -- (0.3,8.8) -- (0.9,8.4);
+\ifxetex
+\node [scale=2.1] at (5,-0.1)  {   {\bf {\nakulafont  भारतीय प्रौद्योगिकी संस्थान हैदराबाद }} };
+\node [scale=1.8] at (5,-1.2) {   {\bf {\liberationsansfont Indian Institute of Technology Hyderabad}} };
+\fi
+\end{tikzpicture}
+		  }
+%
+\renewcommand\headrule
+ {
+\begin{tikzpicture}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\draw[line width=0.75mm, yellow1] (0,0) -- (\textwidth,0);
+\end{tikzpicture} 
+ }
+}
+\pagestyle{plain}
+
+\usepackage{blindtext}
+\title{\textbf{\underline{\Huge{Mini-Assignment- III }}}}
+\author{Akash Tadwai}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{YACC Conflicts}
+    There are 3 possible types of conflicts that can occur. They are shift-shift, reduce-reduce and
+shift-reduce. Shift-shift conflict will never occur in parser. \\ 
+\begin{itemize}
+    \item \textbf{Shift - Reduce Conflict} :
+If a state has both shift and reduce action associated with it, then the parser cannot decide
+between them. In a shift-reduce conflict, YACC’s default is to shift.
+\item \textbf{Reduce - Reduce Conflict} :
+If a state has two reduce actions associated with it, then the parser cannot decide the action.
+In a reduce-reduce conflict, YACC’s default is to reduce to the action which is appears first
+in the rules mentioned. \\ 
+\item \textbf{NOTE:} When YACC encounters a shift/reduce conflict, it shifts if the token in the input buffer has a greater precedence than the production of the handle on top of the stack and reduces if the production of the handle on top of the stack has a higher precedence than the token. If the production and the token have same precedence, it reduces if the production corresponding to the handle is left associative and shifts if they are right associative. (If the production and token in such a case of equal precedence occur and they both are non associative, YACC reports an error).
+\end{itemize}
+
+\subsection{Running YACC on C and C++ Grammars}
+\begin{itemize}
+    \item \textbf{Compilation flags}:
+    \begin{enumerate}
+        \item \textbf{-d :} If this option is used, the file y.tab.h is generated with the define statements that associate the yacc-assigned 'token codes' with the user-declared 'token names'. This allows source files other than y.tab.c to access the token codes. 
+        \item \textbf{-v}: If this option is given, the file y.output is prepared, which contains a description of the parsing tables and a report on conflicts generated by ambiguities in the grammar.
+    \end{enumerate}
+    \item Running $C$ grammar produces 350 states and a conflict in state 333 which is an if-else construct.
+    \item Running the given C++ grammar produces 894 states and 0 unresolved conflicts. It was mentioned in the given grammar that 24 conflicts from 10 ambiguities are resolved by\\ 8 \%prec's, so that yacc reports 0 conflicts.
+
+\end{itemize}
+   \subsection{\textbf{SR conflicts in $C$ Grammar }} 
+   There is only one Conflict in C grammar that is $if-else$ construct. The conflict is due to the ambigousness of the grammar. The output of yacc after running the C grammar is as follows,\\ ~ \\ 
+  \textit{CGrammar.y: warning: 1 shift/reduce conflict [-Wconflicts-sr]
+\\~\\}
+Looking into the $y.output$ file the first line states that, the there is a conflict in state 333, which is,
+
+\begin{minted}{c}
+State 333
+
+  192 selection_statement: IF '(' expression ')' statement .
+  193                    | IF '(' expression ')' statement . ELSE statement
+
+    ELSE  shift, and go to state 343
+
+    ELSE      [reduce using rule 192 (selection_statement)]
+    $default  reduce using rule 192 (selection_statement)
+    
+\end{minted} 
+
+The conflict arises due to not specifying which "if" to match to the "else" statement, i.e, There are two rules for selection\_statement. If the lookahead token is ELSE the the parser
+has two choices. One is to shift the ELSE and go to 343 state. Other option is to reduce by
+using the rule 192.
+We can remove the conflict in one of the following ways:
+   \begin{itemize}
+       \item Prioritizing shift over reduce (YACC default). This is a good decision as designing \\ Unambigous grammars may not be feasible in all cases. Or giving Precedence to if-else more than if using \%prec. We can do it as follows,
+       \begin{minted}{c}
+       // As we go down, precidence increases
+%nonassoc IF
+%nonassoc ELSE
+selection_statement : IF '(' expression ')' statement %prec IF
+                    | IF '(' expression ')' statement ELSE statement
+       \end{minted}
+       \item Designing Unambigous Grammar as follows,
+       $$
+       \begin{aligned}
+       stmt &\rightarrow matched-stmt \mid unmatched-stmt \\ 
+       matched-stmt &\rightarrow if\ (\ expr\ \ )\ matched-stmt\ else \ matched-stmt \\ 
+       matched-stmt &\rightarrow non-alternative\ stmt \\ 
+       unmatched-stmt &\rightarrow if\ (\ expr\ \ )\ \\ 
+       unmatched-stmt &\rightarrow if\ (\ expr\ \ )\ 
+       matched-stmt\ else\ unmatched-stmt
+       \end{aligned}
+       $$
+   \end{itemize}
+   \begin{itemize}
+       \item A $matched\ statement$ is
+   \begin{itemize}
+       \item  either an if-else statement containing no unmatched statements or 
+       \item any statement which is not an if-else statement and not an if statement.
+   \end{itemize}
+   \item Then an unmatched statement is:
+        an if statement (with no else-part) 
+        or if-else statement where unmatched statements are allowed in the else-part (but not in the if-part).
+   \end{itemize}
+\section{YACC Grammars for Float Binary to Decimal} 
+\begin{enumerate}
+    \item \textbf{Method-I}
+    \begin{lstlisting}
+N :   L.R {N.value = L.value + R.value}
+    | {}
+
+L :   L1 B {L.value = L1.value*2 + B.value}
+    | B {L.value = B.value}
+
+R :   B R1 {R.value = (R1.value+B.value)/2}
+    | B    {R.value = B.value/2}
+
+B :   ZERO {B.value=0}
+    | ONE  {B.value=1}
+\end{lstlisting}
+\item \textbf{Method-II} 
+\begin{lstlisting}
+N :   L.R {N.value = L.val + R.val}
+    | {}
+
+L :   B L1 {L.len = L1.len +1
+            L.val = B.val * (*$2^{L1.len}$*)}
+    | B {L.val = B.val
+         L.len = 1}
+
+R :   B R {R.val = (R.val+B.val)/2}
+    | B   {R.val = B.val/2}
+
+B :   ZERO {B.val=0}
+    | ONE  {B.val=1}
+\end{lstlisting}
+\newpage 
+\item \textbf{Method-III} 
+\begin{lstlisting}
+N  :  X1.X2 {N.val  = X1.val + X2.val/(*$2^{X2.len}$*)}
+
+X  :  BX2   {X.len  = X1.len + 1
+    |        X.val=B.val * (*$2^{X2.len}$*) + X2.val}
+     
+B :   ZERO {B.val=0}
+    | ONE  {B.val=1}
+\end{lstlisting}
+\end{enumerate}
+\centering{{\LaTeX} generated document}
+
+************END************
+\newpage    
+
+
+\end{document}
