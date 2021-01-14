@@ -1,0 +1,14 @@
+// Test 12 : Balance in built function
+
+def main()
+{
+    string a;
+    string b;
+    
+    // Balancing unbalanced chemical equations
+    a = balance [H2,O2 --> H2O];
+    b = balance [NaOH,HCl --> H2O,NaCl];
+
+    print a;
+    print b;
+}

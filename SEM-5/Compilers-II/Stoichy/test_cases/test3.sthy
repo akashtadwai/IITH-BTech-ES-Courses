@@ -1,0 +1,17 @@
+// Test 3: Arithmetic Expressions 
+
+def main()
+{
+	print 100;
+	print 2020;
+
+	
+	print 1+2;
+	print 1- 2;
+	print 1*2;
+	print 1/2;
+	print 1%2;
+
+	print -3- 39;
+	print 14*-3;
+}

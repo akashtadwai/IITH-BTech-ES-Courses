@@ -1,0 +1,26 @@
+// Test 6 : Nested if-else statements
+
+def main()
+{
+    int a;
+    int b;
+    a=2;
+    b=1;
+    if(a!=b)
+    {
+        print "a is not equal to b";
+        if(a>b)
+        {
+            print "a is greater than b";
+        }
+        else 
+        {
+            print "b is greater than a";
+        }
+    }
+    else 
+    {
+        print "a is equal to b";
+    }
+
+}

@@ -1,0 +1,6 @@
+// Test 13 : Error file shld report error
+
+def main()
+{
+    /* Opened a comment but didn't close it
+}

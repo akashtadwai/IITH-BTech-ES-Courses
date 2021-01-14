@@ -1,0 +1,8 @@
+// Test 14 : Error file shld report error
+
+def main()
+{
+    string a;
+    // Didn't put ' " ' in string
+    a="hi
+}

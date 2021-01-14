@@ -1,0 +1,13 @@
+// Test 10 : Non primitive datatyped declarations
+
+def main()
+{
+    int a;
+	element Na(11,23.0,1);
+	element Cl(17,35.5,-1);
+    element H(1,1.0,0);
+    element O(8,16.0,-2);
+	molecule NaCl(Na,Cl);
+	molecule H2O(H,H,O);
+    print "Elements and molecules are created succesfully!";
+}

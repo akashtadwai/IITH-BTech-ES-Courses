@@ -1,0 +1,15 @@
+// Test 5 : If-Else statements
+
+def main()
+{
+    int a;
+	a=10;
+	if(a==0)
+	{
+		print "Number is zero : (";
+	}
+	else 
+	{
+		print "NUmber is not zero!!";
+	}
+}

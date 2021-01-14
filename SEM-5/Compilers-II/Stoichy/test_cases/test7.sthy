@@ -1,0 +1,14 @@
+// Test 7 : While statement
+
+def main()
+{
+    int i;
+    int temp;
+    i=0;
+    while(i!=10)
+    {
+        temp = i%5;
+        print temp;
+        i=i+1;
+    }
+}

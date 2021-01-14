@@ -1,0 +1,29 @@
+// Test 11 : Using access operators
+
+def main()
+{
+    int a;
+    double b;
+	element Na(11,23.0,1);
+	element Cl(17,35.5,-1);
+    element H(1,1.0,1);
+    element O(8,16.0,-2);
+	molecule NaCl(Na,Cl);
+	molecule H2O(H,H,O);
+    b = Na.mass;
+    print "Mass of Na is " ^ b;
+    a = Na.charge;
+    print "Charge of Na is " ^ a;
+    b = Cl.mass;
+    print "Mass of Cl is " ^ b;
+    a = Cl.charge;
+    print "Charge of Cl is " ^ a;
+    b = NaCl.mass;
+    print "Mass of NaCl is " ^ b;
+    a = NaCl.charge;
+    print "Charge of NaCl is " ^ a;
+    b = H2O.mass;
+    print "Mass of H2O is " ^ b;
+    a = H2O.charge;
+    print "Charge of H2O is " ^ a;
+}

@@ -1,0 +1,21 @@
+def main()
+{
+    int charge1;
+    int charge2;
+    double mass1;
+    double mass2;
+    element Na (11,23.0,1);
+    element Cl (17,35.5,-1);
+    element H (1,1.0,1);
+    element O (8,16.0,-2);
+    molecule NaCl(Na,Cl);
+    molecule H2O(H,H,O);
+    charge1 = NaCl.charge;
+    charge2 = H2O.charge;
+    print "Charge of NaCl molecule is " ^ charge1;
+    print "Charge of H2O molecule is " ^ charge2;
+    mass1 = NaCl.mass;
+    mass2 = H2O.mass;
+    print "Mass of NaCl molecule is " ^ mass1;
+    print "Mass of H2O molecule is " ^ mass2;
+}

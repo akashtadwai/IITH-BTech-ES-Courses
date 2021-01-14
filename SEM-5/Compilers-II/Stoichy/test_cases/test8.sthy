@@ -1,0 +1,12 @@
+// Test 8 : For loop
+
+def main()
+{
+    int i;
+    int temp;
+    for(i=0;i<10;i=i+1)
+    {
+        temp = i%5;
+        print temp;
+    }
+}

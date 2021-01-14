@@ -1,0 +1,6 @@
+// Test 15 : Error file shld report error
+
+def main()
+{
+    print " Didn't place ';' after print statement "
+}

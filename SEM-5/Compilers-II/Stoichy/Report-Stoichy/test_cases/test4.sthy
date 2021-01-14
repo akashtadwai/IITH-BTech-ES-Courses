@@ -1,0 +1,18 @@
+// Test 4 : Printing strings
+
+def main()
+{
+    string first;
+	string a;
+	string b;
+	string c;
+    print " Printing without using concatenation";
+    first = "Hello, world!";
+    print first;
+	a = "Hello";
+	b = "world";
+	c = "!";
+    print " Printing by using concatenation";
+	print a ^ ", " ^ b ^ c;
+
+}

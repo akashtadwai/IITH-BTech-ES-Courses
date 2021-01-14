@@ -1,0 +1,22 @@
+// Test 9 : Call key word
+
+def multipleof5(int a)
+{
+    if(a%5==0)              // Checing the modulous value
+    {
+        print "Hurray! " ^ a ^ " is multiple of 5 : )";
+    }
+    else 
+    {
+        print "Oh no! " ^ a ^ " is not multiple of 5 : (";
+    }
+}
+def main()
+{
+    int a;
+    int b;
+    a = 4;
+    b = 10;
+    call multipleof5(a);      // Calling multipleof5 function
+    call multipleof5(b);      // Calling multipleof5 function
+}

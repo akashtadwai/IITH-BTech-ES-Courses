@@ -1,0 +1,272 @@
+commit 55302df623075b0d8a5d6885da2de696e00ab6c4
+Author: K Vamshi Krishna Reddy <70333890+kvkr3003@users.noreply.github.com>
+Date:   Wed Dec 16 22:53:10 2020 +0530
+
+    Add files via upload
+
+commit db6e040ba84c30dc411d284fc1bbc1200582a2da
+Author: havya7 <61291792+havya7@users.noreply.github.com>
+Date:   Wed Dec 16 22:48:21 2020 +0530
+
+    Add files via upload
+    
+    Formatted code
+
+commit effa7eab5ec161c60c0ccd32ebc7122b61a0cd6c
+Author: havya7 <61291792+havya7@users.noreply.github.com>
+Date:   Wed Dec 16 22:46:45 2020 +0530
+
+    Delete semantic.ml
+
+commit ff2644384782223fd9c3626902a7a4fd6709398e
+Author: havya7 <61291792+havya7@users.noreply.github.com>
+Date:   Wed Dec 16 22:46:10 2020 +0530
+
+    Create semantic.ml
+
+commit b9d281bcffef7ed2acf3d8686aa771b3b23dc533
+Author: havya7 <61291792+havya7@users.noreply.github.com>
+Date:   Wed Dec 16 22:44:53 2020 +0530
+
+    Delete compile.ml
+
+commit e04b182138d3e1fa486452abc3221e2f3be855d1
+Author: havya7 <61291792+havya7@users.noreply.github.com>
+Date:   Wed Dec 16 22:43:53 2020 +0530
+
+    Delete semantic.ml
+
+commit b820fde284e783d52c1f0b786eaac9429e20a315
+Author: K Vamshi Krishna Reddy <70333890+kvkr3003@users.noreply.github.com>
+Date:   Wed Dec 16 22:40:28 2020 +0530
+
+    Add files via upload
+
+commit 21fee92f911dc914d9ddb885ceeeb7ad248d9cb1
+Author: sai_varshittha <saivarshitthaponnam7@gmail.com>
+Date:   Wed Dec 16 21:26:35 2020 +0530
+
+    formatting done
+
+commit 25b88c296d061c8a9db014c9423120c05a422293
+Author: sai_varshittha <saivarshitthaponnam7@gmail.com>
+Date:   Wed Dec 16 21:26:18 2020 +0530
+
+    added comments
+
+commit 0222c632249d1f5b1ad0fb2c938d1577734fac3d
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Dec 16 21:02:51 2020 +0530
+
+    finalising....
+
+commit 4445616be826248b068f6b7565cb916a6d568ae0
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Dec 16 20:07:06 2020 +0530
+
+    Changed README.md
+
+commit 792e8df785dae92de02f67db2e28ec39e40beaab
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Wed Dec 16 18:29:55 2020 +0530
+
+    Added test cases
+
+commit 6cfc647595e7abe9a36f2ac8d1183de5f413f8a3
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Dec 16 16:59:52 2020 +0530
+
+    minor changes in code
+
+commit cd725f3d96a183903892bf6d278c17f6dde7a695
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Dec 16 00:24:56 2020 +0530
+
+    Pre reqs bash script added
+
+commit db1815a1c3d958f80bcecc604fe2b7701c47c489
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 15 21:37:36 2020 +0530
+
+    Final Demo Version
+
+commit 7a69e210ab9f323e1f455e41bb00925c92be3b31
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 15 20:07:57 2020 +0530
+
+    Fixed yet another bug :P
+
+commit 324cc797d27a9ed29c5bf098dc16ada01aa857e0
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Mon Dec 14 23:34:36 2020 +0530
+
+    Fixed another bug :PP
+
+commit a323f122b1b14846273c90dda42f0d0b1dc8813b
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Mon Dec 14 23:04:40 2020 +0530
+
+    Fixed small bug in lexer :p
+
+commit 384e151fbc4f56edec236e2bf1f06524ff6c757d
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Mon Dec 14 21:34:49 2020 +0530
+
+    Demo Version done
+
+commit c5911f9c36b3a599ed56d628184695ee1dfbc94d
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Dec 9 12:00:12 2020 +0530
+
+    Checking for invalid eqns done
+
+commit b9ce3b0789620720691dffadf32ff155af5ae29f
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Dec 9 01:16:30 2020 +0530
+
+    Balancing using Python3 :snake:
+
+commit e99da62b3dfbc06389ceb4bd0b77322d242ac461
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Dec 9 01:16:05 2020 +0530
+
+    Balancing using Python3 :snake:
+
+commit 651891cf71837042e21af7cfa8cd0683537958f2
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 8 21:41:21 2020 +0530
+
+    CodeGen V2
+
+commit b44086cf4cb49f6df53ee5103bed995f21255eca
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 8 21:01:46 2020 +0530
+
+    CodeGen V2
+
+commit 5f008fea34b2d6131163288b975db083139489b6
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 8 21:01:38 2020 +0530
+
+    CodeGen V2
+
+commit cc8a7fcf465b2d475d5bd310dcd9e046f8fdadda
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 8 20:45:36 2020 +0530
+
+    Added
+
+commit 9779b4aa62d85b320aa8579e85ea8ba507c460df
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 8 20:43:40 2020 +0530
+
+    Added
+
+commit d0267ad9775cddaf8a3c42862fb025f1ef1d3b1b
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 8 20:22:10 2020 +0530
+
+     added
+
+commit 11932f00f92f0070912fc071c03605c7d8557f8c
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 8 18:35:59 2020 +0530
+
+    Updated makefile
+
+commit 2cefc1db4cbbd0998af2b3cac7cccbae098a7459
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Dec 8 18:17:20 2020 +0530
+
+    Code generation V1
+
+commit 11c3dc7cf618d47425a20edbd221d02600abbcf2
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Wed Nov 25 21:17:14 2020 +0530
+
+    Semantic V0
+
+commit ea0cfa1ce18ed0d6858b054d672b7a4f7c8fefe4
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Nov 25 18:51:40 2020 +0530
+
+    semantic v2.0
+
+commit 704e4fcd647aee601cb0f11e63dfcc5f0aea6c53
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Nov 25 13:59:41 2020 +0530
+
+    debugging...
+
+commit 5c6936dd39e5b8a5ef912ff44aaa4a8b75bb73c3
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Sat Nov 21 17:59:39 2020 +0530
+
+    Version 0 Semantic
+
+commit 438c6003e315c603c9cc4f44a715893f194c8abe
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Wed Oct 28 12:40:29 2020 +0530
+
+    Update README.txt
+
+commit 79a408eaeaf79e9e4b5cbd615e3559ccda42a0aa
+Merge: b4e347a 6b040f4
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Wed Oct 28 12:34:10 2020 +0530
+
+    Merge https://github.com/akashtadwai/stoichy
+
+commit b4e347a986f8a8b30ec5b5c8ee6c71d3a2e71f5a
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Wed Oct 28 12:22:43 2020 +0530
+
+    Added incorrect programs
+
+commit 6b040f4f4b01e4cbcf38b861f8a18f07803c1eda
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Tue Oct 27 21:15:56 2020 +0530
+
+    added README.txt
+
+commit 2d97736be3d35e4f637291f10546903f2757c9ef
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Oct 27 21:00:45 2020 +0530
+
+    Added correct testcases
+
+commit b99f3e355a2d50c6d2f1b2927732fff5297a5100
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Tue Oct 27 17:52:10 2020 +0530
+
+    Version1 changes
+
+commit f314488dcaf3ab86ee2959bc981752b88e892c8f
+Author: ReethuVinta <es18btech11028@iith.ac.in>
+Date:   Sat Oct 24 11:45:24 2020 +0530
+
+    Parser debugging done
+
+commit cde3809b7f0297fcda01c5ea084b1cd79ed0c281
+Author: sai_varshittha <saivarshitthaponnam7@gmail.com>
+Date:   Tue Oct 13 22:50:19 2020 +0530
+
+    parser 11
+
+commit 04f656b3f50cc6949328c25f9b89084f909b006a
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Sat Oct 10 23:07:04 2020 +0530
+
+    lexer v2.0
+
+commit e857a646f04c5949d951fde1ad7b4a32002ca392
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Thu Oct 8 23:27:38 2020 +0530
+
+    makefile for basic lex and parser testing
+
+commit 7a311775d264cb84c6be13ff488c96c8efa39145
+Author: Akash Tadwai <akashadarsh.tadwai@gmail.com>
+Date:   Sat Oct 3 18:37:27 2020 +0530
+
+    lexer v1.0

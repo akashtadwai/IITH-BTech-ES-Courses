@@ -1,0 +1,19 @@
+// Test 2 : Primitive Datatypes declaration and printing
+
+def main() 
+{
+	int a;
+	int b;
+	string s;
+	boolean c;
+
+	a = 0;
+	b = 1;
+	s = "Stoichy is awesome !";
+	c=true;
+
+	print a;
+	print b;
+	print s;
+	print c;
+}

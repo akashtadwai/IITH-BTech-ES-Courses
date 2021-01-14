@@ -1,0 +1,22 @@
+def checkeven(int a)
+{
+    if(a%2==0)              // Checing the modulous value
+    {
+        print "Hurray! " ^ a ^ " is an even number : )";
+    }
+    else 
+    {
+        print "Oh no! " ^ a ^ " is a odd number : (";
+    }
+}
+def main()
+{
+    int a;
+    int b;
+    a = 4;
+    b = 5;
+    call checkeven(a);      // Calling checheven function
+    call checkeven(b);      // Calling checheven function
+    print a>2;
+    print b<=7;
+}

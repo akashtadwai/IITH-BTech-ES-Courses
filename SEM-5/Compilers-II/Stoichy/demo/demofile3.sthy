@@ -1,0 +1,24 @@
+def main()
+{
+    int a;
+    int i;
+    int j;
+    int temp;
+    a = 10;
+    i = 0;
+    j = 0;
+
+    while (i<=a)
+    {
+        temp = i-a;
+        print temp;
+        i=i+1;
+    }
+    print "-----";
+    for (i=1;i<=a;i=i+1)
+    {
+        temp = i*1;
+        print temp;
+    }
+    
+}

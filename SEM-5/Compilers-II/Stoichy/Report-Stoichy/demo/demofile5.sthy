@@ -1,0 +1,20 @@
+def main()
+{
+    string a;
+    string b;
+    string c;
+    string d;
+    string e;
+    
+    // Balancing unbalanced chemical equations
+    a = balance [H1,Cl2 --> HCl];
+    b = balance [PCl5,H2O --> H3PO4,HCl];
+    c = balance [KBr,KMnO4,H2SO4 --> Br2,MnSO4,K2SO4,H2O];
+    d = balance [SnO2,H2 --> H2O,Sn1];
+    e = balance [H2-->O2];
+    print a;
+    print b;
+    print c;
+    print d;
+    print e;
+}

@@ -1,0 +1,6 @@
+// Test 1 : Empty main block
+
+def main(int a)
+{
+    
+}
