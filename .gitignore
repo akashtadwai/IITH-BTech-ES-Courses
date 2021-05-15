@@ -1,3 +1,4 @@
-/*/*/*.vscode
-/*/**/*.git
-/*/**/*.out
+**/.vscode
+**/*.git
+*.out
+**/Slides

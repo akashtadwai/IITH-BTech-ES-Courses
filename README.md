@@ -35,4 +35,11 @@ Raise an issue/ put up a pull request if any errors are found in the codes
      ├  MA3140-Statistical Inference
      ├  Networks-I
      ├  OperatingSystems-I
+
+ ├ SEM6
+     ┬  DBMS-II
+     ├  DeepLearning for Computer Vision
+     ├  Linear Optimization
+     ├  Computer Networks -II 
+     ├  Operating Systems - II 
 </pre>
