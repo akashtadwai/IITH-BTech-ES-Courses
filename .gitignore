@@ -2,3 +2,8 @@
 **/*.git
 *.out
 **/Slides
+
+# Python files
+__pycache__/
+*.ipynb_checkpoints/
+*.py[cod]
