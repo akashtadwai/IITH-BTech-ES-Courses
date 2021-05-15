@@ -1,0 +1,111 @@
+""" 
+I certify that this assignment/report is my own work, based on my personal
+study and/or research and that I have acknowledged all material and sources
+used in its preparation, whether they be books, articles, reports, lecture notes,
+and any other kind of document, electronic or personal communication. I also
+certify that this assignment/report has not previously been submitted for
+assessment in any other course, except where specific permission has been granted
+from all course instructors involved, or at any other time in this course, and that I
+have not copied in part or whole or otherwise plagiarised the work of other
+students and/or persons. I pledge to uphold the principles of honesty and responsibility at
+CSE@IITH. In addition, I understand my responsibility to report honour violations by other
+students if I become aware of it.
+Name:   Akash Tadwai
+Date:   24-04-2021
+Signature: Akash 
+
+"""
+
+Problem Statement #2
+
+Experiment 1:
+    a,b) The output of $ free -mh is as follows after disabling swap
+                            total        used        free      shared  buff/cache   available
+        Mem:           985M         94M        777M        744K        112M        764M
+        Swap:            0B          0B          0B                                     
+
+    d,e) The program has run for 86884 iterations and malloc failed. I have created dynamic memory with malloc(100*1024*1024)
+            Output:
+                i=86882
+                i=86883
+                i=86884
+                malloc() failed
+                After the loop
+
+    c) Output of $ vmstat -t 1
+                procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu----- -----timestamp-----
+        r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st                 UTC
+
+        0  0      0 444184  17512 448968    0    0     0     0   31   65  0  0 100  0  0 2021-04-24 14:07:13
+        0  0      0 444216  17512 448968    0    0     0     0   25   59  1  1 98  0  0 2021-04-24 14:07:14
+        0  0      0 444216  17512 448968    0    0     0     0   34   72  0  0 100  0  0 2021-04-24 14:07:15
+        0  0      0 444248  17512 448968    0    0     0     0   34   80  0  0 100  0  0 2021-04-24 14:07:16
+        0  0      0 443992  17520 448972    0    0     0    72   31   70  0  0 86 14  0 2021-04-24 14:07:17
+        0  0      0 443992  17520 448972    0    0     0     0   26   40  0  0 100  0  0 2021-04-24 14:07:18
+        1  0      0 432892  17520 448972    0    0     0     0  906 6462  2 17 81  0  0 2021-04-24 14:07:19
+        2  0      0 335088  17520 448972    0    0     0     0 10656 57324 18 82  0  0  0 2021-04-24 14:07:20
+        2  0      0 238956  17520 448972    0    0     0     0 5776 56636 15 85  0  0  0 2021-04-24 14:07:21
+        2  0      0 152500  17520 448972    0    0     0     0 5968 52847 19 81  0  0  0 2021-04-24 14:07:22
+        3  0      0 191476  17520 315136    0    0     0     0 5506 55719 16 84  0  0  0 2021-04-24 14:07:23
+        2  0      0 101672  17520 315092    0    0     0     0 5609 54030 18 82  0  0  0 2021-04-24 14:07:24
+        2  0      0 138448  16928 161652    0    0     0     0 5538 66805 20 80  0  0  0 2021-04-24 14:07:25
+        2  0      0  67684  13412 110668    0    0     0    80 5233 69995 22 78  0  0  0 2021-04-24 14:07:26
+        0  0      0 797644   9720 103640    0    0   856     0  479 5338  3 23 62 12  0 2021-04-24 14:07:27
+        0  0      0 797644   9720 103640    0    0     0     0   14   35  0  0 100  0  0 2021-04-24 14:07:28
+        0  0      0 797644   9720 103640    0    0     0     0   19   49  0  0 100  0  0 2021-04-24 14:07:29
+
+    We can see that both si(swap in from disk),so(swap out from disk) are always 0 as there is no swap space.
+    As the malloc runs it fails after less number of iterations as there is no memory that can be swapped!
+    We can see that the amount of idle memory is been decreasing and malloc is failed.
+
+
+
+Experiment 2:
+
+    a,b) The output after $ free -mh is as follows after enabling swap
+
+                        total        used        free      shared  buff/cache   available
+        Mem:           985M         95M        770M        744K        119M        760M
+        Swap:          1.1G          0B        1.1G
+
+    d,e) The program has run for 202970 iterations and is killed by OOM I have created dynamic memory with malloc(100*1024*1024)
+            Output:
+                i=202968
+                i=202969
+                i=202970
+                Killed
+
+    c) Output of $ vmstat -t 1
+                procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu----- -----timestamp-----
+        r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st                 UTC
+        0  0      0 789092  12044 109896    0    0     0     0   19   46  0  0 100  0  0 2021-04-24 14:16:24
+        0  0      0 789092  12044 109896    0    0     0     0   16   32  0  0 100  0  0 2021-04-24 14:16:25
+        0  0      0 789092  12044 109896    0    0     0     0   21   43  0  0 100  0  0 2021-04-24 14:16:26
+        2  0      0 669984  12044 109896    0    0     0     0 7572 63847 17 74  7  0  2 2021-04-24 14:16:27
+        2  0      0 529092  12044 109896    0    0     0     0 4843 76064 24 76  0  0  0 2021-04-24 14:16:28
+        2  0      0 398456  12044 109896    0    0     0     0 4701 71302 20 80  0  0  0 2021-04-24 14:16:29
+        2  0      0 210752  12044 109896    0    0     0     0 5041 99106 21 79  0  0  0 2021-04-24 14:16:30
+        2  0    780  63596   9092  90996    0  776     0   776 5610 91998 20 80  0  0  0 2021-04-24 14:16:31
+        2  0  73996  62412    104  17356   48 73068  1788 73068 4975 83234 14 86  0  0  0 2021-04-24 14:16:32
+        2  2 274432  48700    116  18008  156 200472  4172 200472 5286 96751 16 84  0  0  0 2021-04-24 14:16:33
+        2  1 355084  49124    112  17956    8 80756  1528 80756 4276 44239 10 60  0 29  1 2021-04-24 14:16:34
+        1  1 420364  48584    596  17912    0 65204   484 65204 3719 28929 10 71  0 18  1 2021-04-24 14:16:35
+        2  0 515340  63380    100  17500    0 94928  1400 94928 4071 52158 14 74  0 12  0 2021-04-24 14:16:36
+        3  1 613388  88328    100  17752   56 97960  2344 97960 2254 37290  3 28  0 69  0 2021-04-24 14:16:38
+        2  2 686604  65040    100  17684   60 73420  2324 73420 4916 49364 14 77  0  9  0 2021-04-24 14:16:39
+        1  1 773376  48960    100  17952  168 86984  1792 86984 3334 42999  9 61  0 29  0 2021-04-24 14:16:41
+        2  1 837900  50856     96  17488  292 64824  2040 64824 2730 39854 10 75  0 16  0 2021-04-24 14:16:42
+        1  3 631644  48712     88  16184 3728 21408 64732 21408 4390 18608  3 73  0 23  0 2021-04-24 14:16:46
+        0  4  44892 932740    360  22120  744    0  4932     0 1557 4934  0 66  0 34  0 2021-04-24 14:16:47
+        1  2  44636 930376    360  24140  304    0  2172     0  133  292  0  2  0 98  0 2021-04-24 14:16:48
+        0  0  44380 927524    492  26640  324    0  2656     0  161  348  1  3 19 77  0 2021-04-24 14:16:49
+
+
+    We can see that so much memory is been swapped out of disk when malloc is in action.
+    We can see that swpd(amount of Virtual memory used) is increasing as malloc is running 
+    and the amount of free memory decreasing. 
+
+References:
+
+a. https://opensource.com/article/18/9/swap-space-linux-systems
+b. https://man7.org/linux/man-pages/man8/vmstat.8.html

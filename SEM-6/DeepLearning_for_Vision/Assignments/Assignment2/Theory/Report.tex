@@ -1,0 +1,324 @@
+\documentclass[english,a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{iftex}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{amsfonts}
+\include{amsmath}
+\def\lc{\left\lceil}
+\def\rc{\right\rceil}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+\urlstyle{same}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+\geometry{verbose,tmargin=4cm,bmargin=4.5cm,lmargin=1.8cm,rmargin=1.7cm,headheight=2.7cm,headsep=1cm,footskip=3cm}
+\usepackage{array}
+%
+\def \hsp {\hspace{3mm}}
+%
+\makeatletter
+\providecommand{\tabularnewline}{\\}
+\makeatother
+%
+\ifxetex
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\newfontfamily\nakulafont[AutoFakeBold=2]{Nakula}
+\newfontfamily\liberationfont{Liberation Sans Narrow}
+\newfontfamily\liberationsansfont{Liberation Sans}
+\fi
+%
+\usepackage{tikz}
+\usepackage{xcolor}
+%
+%
+\definecolor{circleorange}{rgb}{1,0.17,0.08}
+\definecolor{darkorange}{rgb}{1,0.27,0.1}
+\definecolor{orange2}{rgb}{1,0.5,0.15}
+\definecolor{orange3}{rgb}{1,0.65,0.25}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\newcommand{\Omit}[1]{}
+\fancypagestyle{plain}{
+  \fancyhead[LO]
+  {
+\textbf{Akash Tadwai} \newline
+Indian Institute of Technology Hyderabad \newline
+Deep Learning for Vision\newline
+ES18BTECH11019
+	  }
+
+%
+	  \fancyhf[ROH]{
+\begin{tikzpicture}[scale=0.25,every node/.style={transform shape}]
+\draw [fill=circleorange,circleorange] (5,10) circle (1.15);
+\fill [darkorange] (5.06,8) -- (5.06,2) -- (7.3,1.2) -- (7.3,8.8) -- (5.06,8);
+\fill [darkorange] (4.94,8) -- (4.94,2) -- (2.7,1.2) -- (2.7,8.8) -- (4.94,8);
+\fill [orange2]    (7.4,8.4) -- (7.4,1.6) -- (8.2,1.2) -- (8.2,8.8) -- (7.4,8.4);
+\fill [orange2]    (2.6,8.4) -- (2.6,1.6) -- (1.8,1.2) -- (1.8,8.8) -- (2.6,8.4);
+\fill [orange3]    (8.3,8.4) -- (8.3,1.6) -- (9.0,1.2) -- (9.0,8.8) -- (8.3,8.4);
+\fill [orange3]    (1.7,8.4) -- (1.7,1.6) -- (1.0,1.2) -- (1.0,8.8) -- (1.7,8.4);
+\fill [yellow1]    (9.1,8.4) -- (9.1,1.6) -- (9.7,1.2) -- (9.7,8.8) -- (9.1,8.4);
+\fill [yellow1]    (0.9,8.4) -- (0.9,1.6) -- (0.3,1.2) -- (0.3,8.8) -- (0.9,8.4);
+\ifxetex
+\node [scale=2.1] at (5,-0.1)  {   {\bf {\nakulafont  भारतीय प्रौद्योगिकी संस्थान हैदराबाद }} };
+\node [scale=1.8] at (5,-1.2) {   {\bf {\liberationsansfont Indian Institute of Technology Hyderabad}} };
+\fi
+\end{tikzpicture}
+		  }
+%
+\renewcommand\headrule
+ {
+\begin{tikzpicture}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\draw[line width=0.75mm, yellow1] (0,0) -- (\textwidth,0);
+\end{tikzpicture}
+ }
+}
+\pagestyle{plain}
+
+\usepackage{blindtext}
+\usepackage{amsmath,bm}
+\title{\textbf{\underline{\Huge{Assignment-II }}}}
+\author{Akash Tadwai - ES18BTECH11019
+}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section{RANSAC}{
+
+Let $\mathbf{w}$ be the inlier ratio,
+\begin{itemize}
+    \item As the number of degrees of freedom for homography is $8$.\\
+    we need atleast $n=\lceil d/2 \rceil $ points  = $4$ points.
+    \item The probability that all the $n$ points are inliers is $w^n$.
+    \item The probability that atleast one of n points is an outlier is 1-$w^n$
+    \item The probability that the algorithm never selects all the $n$ points which are all inliers (Algorithm fails) is $ {(1-w^{n}})^k$, where $k$ is the number of iterations.
+\end{itemize}
+In this question, $w = 0.5$, $ {(1-w^{n}})^k=1-0.95$, we have to find $k$ \\
+Solving the equation ${(1-w^{n}})^k=1-0.95$ \\
+$$
+\begin{aligned}
+   \left({1 - \left(\frac{1}{2}\right)^4}\right)^k &= 0.05 \\
+\Rightarrow \left( \frac{15}{16} \right)^k &= \frac{1}{20}\\
+\Rightarrow k &= \left \lceil \frac{log20}{log\frac{16}{15}} \right \rceil  \\
+\Rightarrow k &= \lceil 46.41 \rceil
+\Rightarrow k&= 47.
+\end{aligned}
+$$
+}
+
+\section{Computing $\frac{\partial f}{\partial W_{ij}^{1}}$}{
+Using the following notation for the rest of problem\\
+    \begin{equation*}
+        w^{3} = \begin{bmatrix}
+                  w_{1}^{3} \\
+                  w_{2}^{3}
+                \end{bmatrix}
+        W^{2} = \begin{bmatrix}
+                    W_{11}^{2} & W_{12}^{2}\\
+                    W_{21}^{2} & W_{22}^{2}
+                \end{bmatrix}
+        W^{1} = \begin{bmatrix}
+                    W_{11}^{1} & W_{12}^{1}\\
+                    W_{21}^{1} & W_{22}^{1}
+                \end{bmatrix}
+    \end{equation*}
+    We know that,
+        \begin{equation*}
+             \begin{split}
+                 \frac{\partial}{\partial x} \sigma(x) = \sigma(x) * [1 - \sigma(x)]
+             \end{split}
+        \end{equation*}
+    Since $f(x) = <w^{3},h^{2}>$. From this we can find the derivative of $f$ with respect to $h_{i}^{2}$ as follows:
+        \begin{equation*}
+            \frac{\partial f}{\partial h_{i}^{2}} = w_{i}^{3}
+        \end{equation*}
+    Calculating the derivative of $h_{i}^{2}$ with respect to $h_{i}^{1}$:
+        \begin{equation*}
+            \begin{split}
+                h^{2} & = \sigma(W^{2}h^{1})\\
+                h_{i}^{2} & = \sigma(\sum_{l}W_{il}^{2}h_{l}^{1})
+            \end{split}
+        \end{equation*}
+        \begin{equation*}
+            \begin{split}
+                \frac{\partial h_{j}^{2}}{\partial h_{i}^{1}} & = \sigma(\sum_{l}W_{jl}^{2}h_{l}^{1}) * [1 - \sigma(\sum_{l}W_{jl}^{2}h_{l}^{1})] * W_{ji}^{2}\\
+                & = h_{j}^{2} * (1 - h_{j}^{2}) * W_{ji}^{2}
+            \end{split}
+        \end{equation*}
+    Using these derivatives, we can calculate derivative of $f$ with respect to $h_{i}^{1}$ as follows:
+    \begin{equation*}
+        \begin{split}
+            \frac{\partial f}{\partial h_{i}^{1}} & =  \sum_{k} \frac{\partial f}{\partial h_{k}^{2}} * \frac{\partial h_{k}^{2}}{\partial h_{i}^{1}}\\
+            & = \sum_{k} w_{k}^{3} * h_{k}^{2} * (1 - h_{k}^{2}) * W_{ki}^{2}
+        \end{split}
+    \end{equation*}
+    Calculating the derivative of $h_{i}^{1}$ with respect to $W_{ij}^{1}$:
+    \begin{equation*}
+        \begin{split}
+            h^{1} & = \sigma(W^{1}x)\\
+            h_{i}^{1} & = \sigma(\sum_{j}W_{ij}^{1}x_{j})
+        \end{split}
+    \end{equation*}
+    \begin{equation*}
+        \begin{split}
+            \frac{\partial h_{i}^{1}}{\partial W_{ij}^{1}} & = \sigma(\sum_{j}W_{ij}^{1}x_{j}) * [1 - \sum_{j}W_{ij}^{1}x_{j}] * x_{j}\\
+            & = h_{i}^{1} * [1 - h_{i}^{1}] * x_{j}
+        \end{split}
+    \end{equation*}
+    Using all these equations, we can calculate $\frac{\partial f}{\partial W_{ij}^{1}}$ as follows:
+    \begin{equation*}
+        \begin{split}
+            \frac{\partial f}{\partial W_{ij}^{1}} & = \sum_{m} \frac{\partial f}{\partial h_{m}^{1}} * \frac{\partial h_{m}^{1}}{\partial W_{ij}^{1}}\\
+            & = \frac{\partial f}{\partial h_{i}^{1}} * h_{i}^{1} * [1 - h_{i}^{1}] * x_{j} \\
+            & = \boxed {  \left(\sum_{k} w_{k}^{3} * h_{k}^{2} * (1 - h_{k}^{2}) * W_{ki}^{2} \right) * h_{i}^{1} * (1 - h_{i}^{1}) * x_{j}}
+        \end{split}
+    \end{equation*}
+}
+\section{Vectorisation}{
+The equation is $\Delta_{ij}^{(2)} = \Delta_{ij}^{(2)} + \delta_{i}^{(3)} * a_{j}^{(2)}$. \\
+We can vectorize it as,
+$\Delta_{ij}^{(2)} = \Delta_{ij}^{(2)} + \delta^{(3)}(a^{(2)})^{T}$.
+
+}
+
+\section{Number of Weights and Biases}{
+\begin{itemize}
+    \item \textbf{Number of Weights:} As there are two weight matrices of dimensions, $M\times d$ and $c \times M$, there are total of $\mathbf{M \times d + c \times M}$ weights.
+    \item \textbf{Number of Biases:} As each neuron in the hidden and output layer has a bias associated with it. There are total of $M$ and $c$ biases in the hidden and output layer respectively. Hence there are total of $\mathbf{M+c}$ biases
+    \item \textbf{Number of Derivatives:} \textbf{M+c}  \\
+    \textbf{Explanation: } \\
+Let the weights between input and hidden layer be $W_1$, weights between hidden and output layer be $W_2$.\\
+Number of independent derivatives in hidden layer :\\
+ $$\frac{d E}{dW_{1}}=\delta^{2}(a^{1})^{T}$$
+As there are M nodes in hidden layer, number of independent derivatives = M.\\\\
+Number of independent derivatives in hidden layer :\\
+ $$\frac{d E}{dW_{2}}=\delta^{3}(a^{2})^{T}$$
+As there are c nodes in hidden layer, number of independent derivatives = c.\\
+\textbf{Total}: $\mathbf{M+c}$
+\end{itemize}
+}
+\section{Generalized Least Squares}{
+$$
+\mathbf{y}_{n}=f\left(\mathbf{x}_{n} ; \mathbf{w}\right)+\epsilon_{n}
+$$
+where $\epsilon_{n}$ is drawn from a zero mean Gaussian distribution having a fixed covariance matrix $\Sigma$. \\ ~\\
+
+We can express our uncertainty over the value of
+the target variable using a probability distribution. For this purpose, we shall assume
+that, given the value of $x_n$, the corresponding value of $y_n$ has a Gaussian distribution
+with a mean equal to the value $f(x_n,w)$ ,  Now the probability distribution of $t$ (target) can be written as, \\
+$$
+p(t \mid \mathbf{x}, \mathbf{w}, \Sigma)=\mathcal{N}\left(t \mid f(\mathbf{x}, \mathbf{w}), \Sigma\right)
+$$
+Now considering a data set of inputs $\mathbf{X}=\left\{\mathbf{x}_{1}, \ldots, \mathbf{x}_{N}\right\}$ with corresponding target values $t_{1}, \ldots, t_{N} .$  Making the assumption that these data points are drawn independently from the distribution gaussian distribution described above,  we obtain the following expression for the likelihood function, which is a function of the adjustable parameters $\mathbf{w}$ and $\Sigma,$ in the form
+$$
+\boxed{
+p(\mathbf{t} \mid \mathbf{X}, \mathbf{w}, \Sigma)=\prod_{n=1}^{N} \mathcal{N}\left(t_{n} \mid f(\mathbf{x}, \mathbf{w}), \Sigma\right)}
+$$
+As $x$ will always appear in the set of conditioning variables, and so from now on we will drop the explicit $x$ from expressions such as $p(\mathbf{t} \mid \mathbf{x}, \mathbf{w}, \Sigma)$ in order to keep the notation uncluttered. Taking the logarithm of the likelihood function, and making use of the standard form \\ ($\mathcal{N}\left(x \mid \mu, \sigma^{2}\right)=\frac{1}{\left(2 \pi \sigma^{2}\right)^{1 / 2}} \exp \left\{-\frac{1}{2 \sigma^{2}}(x-\mu)^{2}\right\}$) for the univariate Gaussian, we have
+$$
+\begin{aligned}
+\ln p(\mathbf{t} \mid \mathbf{w}, \Sigma) &=\sum_{n=1}^{N} \ln \mathcal{N}\left(t_{n} \mid f(\mathbf{x}, \mathbf{w})  , \Sigma\right) \\
+&=\frac{N}{2} \ln \Sigma^{-1}-\frac{N}{2} \ln (2 \pi)-\Sigma^{-1} E_{D}(\mathbf{w})
+\end{aligned}
+$$
+where the sum-of-squares error function is defined by
+$$
+\boxed{
+E_{D}(\mathbf{w})=\frac{1}{2} \sum_{n=1}^{N}\left\{t_{n}-f(\mathbf{x}, \mathbf{w})\right\}^{2}}
+$$
+
+Having written down the likelihood function, we can use maximum likelihood to determine $\mathbf{w}$ and $\Sigma$. Consider first the maximization with respect to $\mathbf{w}$. we know that maximization of the likelihood function under a conditional Gaussian noise distribution for a linear model is equivalent to minimizing a sum-of-squares error function given by $E_{D}(\mathbf{w}) .$ The gradient of the log likelihood function  takes the form
+
+$$
+\boxed{
+\nabla \ln p(\mathbf{t} \mid \mathbf{w}, \Sigma)=\sum_{n=1}^{N}\left\{t_{n}-\mathbf{w}^{\mathrm{T}} \boldsymbol{\phi}\left(\mathbf{x}_{n}\right)\right\} \boldsymbol{\phi}\left(\mathbf{x}_{n}\right)^{\mathrm{T}}
+}
+$$
+where we have written $f(x,w)$ as $w^T\phi(x)$ where $\phi(x)$ is some basis function. \\
+Setting this gradient to zero gives
+$$
+0=\sum_{n=1}^{N} t_{n} \phi\left(\mathbf{x}_{n}\right)^{\mathrm{T}}-\mathbf{w}^{\mathrm{T}}\left(\sum_{n=1}^{N} \phi\left(\mathbf{x}_{n}\right) \phi\left(\mathbf{x}_{n}\right)^{\mathrm{T}}\right)
+$$
+Solving for $\mathbf{w}$ we obtain
+$$
+\boxed{
+\mathbf{w}_{\mathrm{MLE}}=\left(\boldsymbol{\Phi}^{\mathrm{T}} \boldsymbol{\Phi}\right)^{-1} \boldsymbol{\Phi}^{\mathrm{T}} \mathbf{t}
+}
+$$
+}
+
+\section{Weight Space Symmetries}
+\subsection{Scale Symmetry}
+\begin{itemize}
+    \item \textbf{Answer:} During backpropagation the weights will be scaled by the same rate $\gamma$, and hence leading to Vanishing Gradient Problem.
+    \item \textbf{Explanation:} Assuming that the all the incoming weights to a hidden layer are scaled by $\gamma$ and outgoing weights are scaled by $\frac{1}{\gamma}$. While updating the weights, the corresponding $\Delta$ terms will be as follows:
+    \item Considering gradients accumulated during back propagation. Let they be $(\delta_{l},\delta_{l}^{'})$ before and after scaling at the hidden layer. Similarly, for preceding and successive layer's accumulated errors can be given by $(\delta_{l-1},\delta_{l-1}^{'})$ and $(\delta_{l+1},\delta_{l+1}^{'})$.
+                \begin{equation*}
+                    \begin{split}
+                        \Delta_{l}^{'} & = \delta_{l+1}^{'} * a_{l}^{'} \\
+                        & = \delta_{l+1} * \gamma * a_{l} \quad  \left( \delta_{l+1}= \delta_{l+1}^{'} ,  \delta_{l} = \frac{1}{\gamma} * \delta_{l}^{'} , \delta_{l-1} = \delta_{l-1}^{'} \right) \\
+                        & = \gamma * \Delta_{l}
+                    \end{split}
+                \end{equation*}
+    \item Hence the change term is also is scaled by $\gamma$, if $\gamma$ is very small, the gradients vanish and else if $\gamma$ is large, the gradients will explode leading to vanishing gradient problem.
+    \item In both of these cases, neural network does not converge.
+\end{itemize}
+
+\subsection{Permutation Symmetry}
+
+\begin{itemize}
+    \item For $\mathbf{M}$ hidden units, any given weight
+vector will belong to a set of $\mathbf{M!}$ equivalent weight vectors associated with this inter-
+change symmetry, corresponding to the $\mathbf{M!}$ different orderings of the hidden units.
+The network will therefore have an overall weight-space symmetry factor of $\mathbf{M!}$.
+\item If there are $\mathbf{l}$ such layers there are total, ${(M!)}^l$ permutations of the weights which can give same output.
+\item As the Neural Network loss function is not convex there are many local minima encountered during training. Hence one needs to be careful while initializing weights for good performance.
+\end{itemize}
+
+
+\center ******THE END******
+\newpage
+\end{document}
