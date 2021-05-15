@@ -1,0 +1,92 @@
+""" 
+I certify that this assignment/report is my own work, based on my personal
+study and/or research and that I have acknowledged all material and sources
+used in its preparation, whether they be books, articles, reports, lecture notes,
+and any other kind of document, electronic or personal communication. I also
+certify that this assignment/report has not previously been submitted for
+assessment in any other course, except where specific permission has been granted
+from all course instructors involved, or at any other time in this course, and that I
+have not copied in part or whole or otherwise plagiarised the work of other
+students and/or persons. I pledge to uphold the principles of honesty and responsibility at
+CSE@IITH. In addition, I understand my responsibility to report honour violations by other
+students if I become aware of it.
+Name:   Akash Tadwai
+Date:   24-04-2021
+Signature: Akash 
+
+"""
+
+
+Problem Statement #1
+
+# Experiment 1
+b)
+    (i) Process #1: (pid = 1797)
+        Code Segment                - 55803a635000-55803a636000 r-xp 
+        Data Segment                - 55803a836000-55803a837000 rw-p    
+        Heap Segment                - 55803aad0000-55803aaf1000 rw-p    
+        Stack Segment               - 7ffe74a66000-7ffe74a87000 rw-p 
+
+    (ii) Process #2: (pid = 1802)
+        Code Segment                - 55e9527fb000-55e9527fc000 r-xp 
+        Data Segment                - 55e9529fb000-55e9529fc000 r--p 
+        Heap Segment                - 55e954036000-55e954057000 rw-p 
+        Stack Segment               - 7ffc7f842000-7ffc7f863000 rw-p 
+
+c)  (i) The result is same for both of the Processes, i.e, 
+          Physical Address:   0xa080000000024b82
+          Page Frame Number:  0x24b82
+
+    (ii) Yes the libc's text segment is the same in two of them,
+        They Page Frame number I got is 0x3f760
+
+
+d) Length of Virtual Address: 12 bit = 2^12 Bytes
+   Length of Physical Address: 16 bit = 2^16 Bytes 
+
+   Process 1's VAS to PAS translation:
+        Code Segment                : 55803a635000 -> 0xa080000000024b82 , PF no.=0x24b82
+        Data Segment                : 55803a836000 -> 0x8180000000021b3a , PF no.=0x21b3a
+        Heap Segment                : 55803aad0000 -> 0x81800000000241b1 , PF no.=0x241b1
+        Stack Segment               : 7ffe74a66000 -> Page Fault
+
+    Process 2's VAS to PAS translation:
+        Code Segment                : 55803a635000 -> 0xa080000000024b82 , PF no.= 0x24b82
+        Data Segment                : 55e9529fb000 -> 0x8180000000024195 , PF no.= 0x24195
+        Heap Segment                : 55e954036000 -> 0x8180000000021b25 , PF no.= 0x21b25
+        Stack Segment               : 7ffc7f842000 -> Page Fault
+
+
+Importance of ASLR: Many types of buffer overflow attacks can be mitigated by ASLR.
+ASLR can locate base, libraries, heap, and stack in a process's address space at random,
+making it impossible for an attacking program to predict the memory address of the next instruction.
+
+# Experiment 2
+
+a)  Code Segment            :   557fee095000-557fee096000 r-xp
+    Data Segment            :   557fee296000-557fee297000 rw-p
+    Heap Segment            :   557fef2ff000-557fef320000 rw-p
+    Stack Segment           :   7fffc6449000-7fffc646a000 rw-p 
+
+b,c) variable/function        Virtual Address         Physical Address      PageFrame       Segment
+  1. main                   0x557fee0957aa          0xa18000000002021d      0x2021d         Code Segment
+  2. global_unint           0x557fee296018          0x8180000000020961      0x20961         Data Segment
+  3. const_global_max       0x557fee0958f8          0xa18000000002021d      0x2021d         Code Segment
+  4. const_local_max        0x7fffc6467c0c          0x8180000000029d41      0x29d41         Stack Segment
+  5. heap_var               0x557fef2ffa07          0xa180000000023971      0x2354e         Heap Segment
+
+Key Observations:
+
+    1. global_var -> Data Segment
+    2. const      -> Code/Data Segment (string literals for a situation when
+     a constant itself would be stored in the data segment, and references to it would be embedded in the code)
+    3. local_var  -> Stack Segment
+    4. static_var -> Data Segment
+    5. dynamic_mem -> Heap Segment
+    6. Pointers   -> Data/Stack (global or a static pointer, in which case the pointer itself would end up in the data segment.)
+
+References:
+
+a. https://help.ubuntu.com/community/KVM/Installation
+b. https://stackoverflow.com/questions/14588767/where-in-memory-are-my-variables-stored-in-c
+c. https://docs.oracle.com/en/operating-systems/oracle-linux/6/security/ol_aslr_sec.html#:~:text=Address%20Space%20Layout%20Randomization%20(ASLR,address%20of%20the%20next%20instruction.

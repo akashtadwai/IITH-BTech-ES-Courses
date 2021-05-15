@@ -1,0 +1,303 @@
+\documentclass[english,a4paper,12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{iftex}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{amsfonts}
+\include{amsmath}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+\urlstyle{same}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+\geometry{verbose,tmargin=4cm,bmargin=4.5cm,lmargin=1.8cm,rmargin=1.5cm,headheight=2.7cm,headsep=1cm,footskip=3cm}
+\usepackage{array}
+%
+\def \hsp {\hspace{3mm}}
+%
+\makeatletter
+\providecommand{\tabularnewline}{\\}
+\makeatother
+%
+\ifxetex
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\newfontfamily\nakulafont[AutoFakeBold=2]{Nakula}
+\newfontfamily\liberationfont{Liberation Sans Narrow}
+\newfontfamily\liberationsansfont{Liberation Sans}
+\fi
+%
+\usepackage{tikz}
+\usepackage{xcolor}
+%
+% 
+\definecolor{circleorange}{rgb}{1,0.17,0.08}
+\definecolor{darkorange}{rgb}{1,0.27,0.1}
+\definecolor{orange2}{rgb}{1,0.5,0.15}
+\definecolor{orange3}{rgb}{1,0.65,0.25}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\newcommand{\Omit}[1]{}
+\fancypagestyle{plain}{
+  \fancyhead[LO]
+  {
+\textbf{Akash Tadwai} \newline 
+Indian Institute of Technology Hyderabad \newline
+Deep Learning for Vision\newline
+ES18BTECH11019
+	  }
+	  
+%
+	  \fancyhf[ROH]{
+\begin{tikzpicture}[scale=0.25,every node/.style={transform shape}]
+\draw [fill=circleorange,circleorange] (5,10) circle (1.15); 
+\fill [darkorange] (5.06,8) -- (5.06,2) -- (7.3,1.2) -- (7.3,8.8) -- (5.06,8);
+\fill [darkorange] (4.94,8) -- (4.94,2) -- (2.7,1.2) -- (2.7,8.8) -- (4.94,8);
+\fill [orange2]    (7.4,8.4) -- (7.4,1.6) -- (8.2,1.2) -- (8.2,8.8) -- (7.4,8.4);
+\fill [orange2]    (2.6,8.4) -- (2.6,1.6) -- (1.8,1.2) -- (1.8,8.8) -- (2.6,8.4);
+\fill [orange3]    (8.3,8.4) -- (8.3,1.6) -- (9.0,1.2) -- (9.0,8.8) -- (8.3,8.4);
+\fill [orange3]    (1.7,8.4) -- (1.7,1.6) -- (1.0,1.2) -- (1.0,8.8) -- (1.7,8.4);
+\fill [yellow1]    (9.1,8.4) -- (9.1,1.6) -- (9.7,1.2) -- (9.7,8.8) -- (9.1,8.4);
+\fill [yellow1]    (0.9,8.4) -- (0.9,1.6) -- (0.3,1.2) -- (0.3,8.8) -- (0.9,8.4);
+\ifxetex
+\node [scale=2.1] at (5,-0.1)  {   {\bf {\nakulafont  भारतीय प्रौद्योगिकी संस्थान हैदराबाद }} };
+\node [scale=1.8] at (5,-1.2) {   {\bf {\liberationsansfont Indian Institute of Technology Hyderabad}} };
+\fi
+\end{tikzpicture}
+		  }
+%
+\renewcommand\headrule
+ {
+\begin{tikzpicture}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\draw[line width=0.75mm, yellow1] (0,0) -- (\textwidth,0);
+\end{tikzpicture} 
+ }
+}
+\pagestyle{plain}
+
+\usepackage{blindtext}
+\usepackage{amsmath,bm}
+\title{\textbf{\underline{\Huge{Assignment-I }}}}
+\author{Akash Tadwai - ES18BTECH11019
+}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{enumerate}
+
+\item[\textbf{1.}] {\begin{center}
+       \large{\textbf{Edge Detection}}  \\~\\
+   \end{center}
+\textbf{Linear Filters $(\textbf{2+2+2+1+3=10}$ marks $):$} In class, we introduced $2 \mathrm{D}$ discrete space convolution. Consider an input image $I[i, j]$ and a filter $F[i, j] .$ The $2 \mathrm{D}$ convolution $F * I$ is defined as
+$$
+(F * I)[i, j]=\sum_{k, l} I[i-k, j-l] F[k, l]
+$$
+(a) Convolve the following I and F (using pen and paper). Assume we use zero-padding where necessary.
+$$
+I=\left[\begin{array}{ccc}
+2 & 0 & 1 \\
+1 & -1 & 2
+\end{array}\right] F=\left[\begin{array}{cc}
+1 & -1 \\
+1 & -1
+\end{array}\right]
+$$
+Please DO NOT write programs. It will also be helpful for answering question (d).
+
+\textbf{A:} The output dimension of matrix is $N_h-F_h+1 \times N_w-F_w+1$ if input is not padded. But, as we are using "Zero" padding and the kernel is an even sized kernel, I have padded the input with top row and left row. Now using the convolution formula, we get, \\~\\
+\begin{align*}
+\mathbb{F'} & = \begin{bmatrix}
+1 & -1 \\
+1 & -1
+\end{bmatrix} 
+\mathbb{I'} = \begin{bmatrix}
+0 & 0 & 0 & 0 \\
+0 & 2 & 0 & 1  \\
+0 & 1 & -1 & 2 \\
+\end{bmatrix}
+\end{align*} \\~\\
+Let $ y[i,j]$ is the output of the convolution we get from the convolution formula that, \\ 
+$$
+\begin{aligned}
+y[0,0] &=\sum_{k, l} I[0-k, 0-l] F[k,l] \\
+&=F[0,0] I[0,0]+F[0,1] I[0, -1]+F[1,1] I[-1,-1]+F[1,0] I[-1,0] \\
+&=(1)(2)+(1)(0)+(-1)(0)+(-1)(0) \\
+&=2
+\end{aligned}
+$$
+$$
+\begin{aligned}
+y[0,1] &=\sum_{k, l} I[0-k, 1-l] F[k, l] \\
+&=F[0,0] I[0,1]+F[0,1] I[0,0]+F[1,0] I[-1,1]+F[1,1]][-1,0]\\
+&=(1)(1)+(1)(2)+(-1)(0)+(-1)(0) \\
+&=3
+\end{aligned}
+$$
+$$
+\begin{aligned}
+y[1,0] &=\sum_{k, l} I[1-k, 0-1] F[k, l] \\
+&=F[0,0] \mathrm{I}[1,0]+F[0,1] I[1,-1]+F[1,1] I[0,-1]+F[1,0] I[0,0] \\
+&=(1)(0)+(1)(0)+(-1)(0)+(-1)(2)\\
+&=-2
+\end{aligned}
+$$
+$$
+\begin{aligned}
+y[1,1] &=\sum_{k, l} I[1-k, 1-1] F[k, l] \\
+&=F[0,0] I[1,1]+F[0,1] I[1,0]+F[1,0] I[0,1]+F[1,1] I[0,0] \\
+&=(1)(-1)+(1)(0)+(-1)(1)+(-1)(2) \\
+&=-1-1-2=-4
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+y[2,0] &=\sum_{k, l} I[2-k, 0-l] F[k, l] \\
+&=F[0,0] I[2,0]+F[1,0] I[1,0]+F[1,1] I[1,-1]+F[0,1] I[2,-1] \\
+&=(1)(1)+(-1)(0)+(-1)(0)+(1)(0) \\
+&=1 \\
+y[2,1] &=\sum_{k, l} I[2-k, 1-l] F[k, l] \\
+&=F[0,0] I[2,1]+F[1,0] I[1,0]+F[1,1] I[1,0]+F[0,1] I[2,0] \\
+&=(1)(2)+(-1)(0)+(-1)(0)+(1)(2) \\
+&=4 \\
+\Rightarrow & \quad y =\left[\begin{array}{ccc}
+2 & -2 & 1 \\
+3 & -4 & 4
+\end{array}\right]
+\end{aligned}
+$$
+(b) Note that the F given in Equation 2 is separable, that is, it can be written as a product of two filters: $F=F_{1} F_{2}$. Find $F_{1}$ and $F_{2}$. Then, compute $\left(F_{1} * I\right)$ and $F_{2} *\left(F_{1} * I\right)$, i.e., first perform 1D convolution on each column, followed by another $1 \mathrm{D}$ convolution on each row. (Please $\mathrm{DO}$ NOT write programs. Do it by hand.) \\ 
+
+\textbf{A:} We know that if a kernel is separable the $rank$ of kernel will be 1 . Here as the second column of the filter $\mathbb{F}$ is a scalar multiple of the first column, the $rank(\mathbb{F})=1$.\\
+\begin{align*}
+    \mathbb{F} &= F_1\cdot F_2 \\ 
+    &=\begin{bmatrix}
+    1\\
+    1
+    \end{bmatrix} \times
+    \begin{bmatrix}
+    1 & -1
+    \end{bmatrix} 
+\end{align*}
+\begin{align*}
+    \mathbb{I'} &= \begin{bmatrix}
+0 & 0 & 0  \\ 
+2 & 0 & 1  \\
+1 & -1 & 2
+\end{bmatrix}, 
+    F_1 = \begin{bmatrix}
+    1 \\
+    1
+    \end{bmatrix},
+    F_2=\begin{bmatrix}
+    1 & -1
+    \end{bmatrix}
+    \\ 
+    (F_1* I')&=\left[\begin{array}{cccc}
+2 & 0 & 1\\
+3 & -1 & 3 
+\end{array}\right] \\ 
+\end{align*}
+\text{Now again padding to left so that output dimensions won't change} \\
+\text{ 
+and flipping the kernel and doing correlation,} \\ 
+\begin{align*}
+(F_1* I')'& = \begin{bmatrix}
+0 & 2 & 0 & 1 \\
+0 & 3 & -1 & 3 
+\end{bmatrix}\\
+(F_2*(F_1*I')') &= \left[\begin{array}{ccc}
+2 & -2 & 1 \\
+3 & -4 & 4
+\end{array}\right]
+\end{align*}
+
+(c) Prove that for any separable filter $F=F_{1} F_{2}$ \\ 
+$F * I=F_{2} *\left(F_{1} * I\right)$
+Hint: Expand Equation 1 directly.\\ 
+\textbf{A:}  \begin{align*}
+(I * F)[m, n] &=\sum_{i=-\infty}^{\infty} \sum_{j=-\infty}^{\infty} I[i, j] \cdot F[m-i, n-j] \\
+&=\sum_{i=-\infty}^{\infty} \sum_{j=-\infty}^{\infty} I[i, j] \cdot\left(F_{1}[m-i] \cdot F_{2}[n-j]\right) \quad ( F[i,j]=F_1[j]*F2[j]) \\
+&=\sum_{j=-\infty}^{\infty} F_{2}[n-j] \sum_{i=-\infty}^{\infty} I[i, j] \cdot F_{1}[m-i] \\
+&=\sum_{j=-\infty}^{\infty} F_{2}[n-j]\left( I * F_{1} \right) \\
+&=F_{2} *\left(I * F_{1}\right) \\ 
+&= F_{2} *\left( F_{1}*I\right) (\text{Associativity of Convolution})
+\end{align*}
+
+(d) Carefully count the exact number of multiplications (multiplications only, including those multiplications due to zero-padding) involved in part (a) and part (b). which one of these requires fewer operations? You may find the computation steps you wrote down for (a) and (b) helpful here. \\ 
+\textbf{A:} Multiplications in part (a) : 24 ($M1*N1*M2*N2$)\\ 
+Multiplications in part (b) : 24 ($M1*N1*(M2+N2)$)\\ ~\\
+(e) Consider a more general case: I is an $M_{1} \times N_{1}$ image, and $\mathrm{F}$ is an $M_{2} \times N_{2}$ separable filter.
+i. How many multiplications do you need to do a direct $2 \mathrm{D}$ convolution?
+ii. How many multiplications do you need to do $1 \mathrm{D}$ convolution on rows and columns? Hint: For (i) and (ii), we are asking for two functions of $M_{1}, N_{1}, M_{2}$ and $N_{2}$ here, no approximations.
+iii. Use Big-O notation to argue which one is more efficient in general: direct $2 \mathrm{D}$ convolution or two successive $1 \mathrm{D}$ convolutions?\\~\\
+\textbf{A:} (i) $ (M_{1} \times N_{1} \times M_{2} \times N_{2})$ multiplications \\
+(ii) $(M_{1} \times N_{1}\left(M_{2}+N_{2}\right))$ multiplications \\
+(iii) direct $2 \mathrm{D}$ convolution is $O\left(M_{1} N_{1} M_{2} N_{2}\right)$
+while two $1 \mathrm{D}$ convolutions is $O\left(M_{1} N_{1}\left(M_{2}+N_{2}\right)\right)$
+For large $M_{2}, N_{2}, M_{2} N_{2} \gg M_{2}+N_{2}$
+So two successive $1 \mathrm{D}$ convolutions is more efficient in general. \\~\\
+2. Canny Edge Detector $(\textbf{2.5+2.5=5}$ \textbf{marks} $):$ Suppose the Canny edge detector successfully detects an edge. The detected edge (shown as the red horizontal line in Figure $2 \mathrm{a}$ ) is then rotated by $\theta,$ where the relationship between a point on the original edge $(x, y)$ and a point on the rotated edge $\left(x^{\prime}, y^{\prime}\right)$ is defined as
+$$
+x^{\prime}=x \cos \theta ; y^{\prime}=x \sin \theta
+$$
+(a) Will the rotated edge be detected using the same Canny edge detector? Provide either a mathematical proof or a counter example. Hint: The detection of an edge by the Canny edge detector depends only on the magnitude of its derivative. The derivative at point $(\mathrm{x}, \mathrm{y})$ is determined by its components along the $x$ and y directions. Think about how these magnitudes have changed because of the rotation. \\ 
+\textbf{A:} Let the magnitude of initial  derivative is
+$$
+\mathcal{L}=\sqrt{d x^{2}+d y^{2}}=|d x|\quad (dy=0 \text{ as point is on X-axis})
+$$
+The magnitude of rotated derivative is
+$$
+\mathcal{L}^{\prime}=\sqrt{(d x \cos \theta)^{2}+(d x \sin \theta)^{2}}=|d x|
+$$
+So the magnitude doesn't change, it can be detected using the same Canny edge detector. \\~\\
+(b) After running the Canny edge detector on an image, you notice that long edges are broken into short segments separated by gaps. In addition, some spurious edges appear. For each of the two thresholds (low and high) used in hysteresis thresholding, state how you would adjust the threshold (up and down) to address both problems. Assume that a setting exists for the two thresholds that produce the desired result. \\~\\
+\textbf{A:}  Parts of the long edges are
+detected, so the high threshold is low enough for these edges, but the edges are disconnected because the low threshold is too high. Lowering the low threshold will include
+more pixels of the long edges. Eliminating the spurious edges requires a higher high
+threshold. The high threshold should be increased only slightly, so as not to make the
+long edges disappear.
+}
+\end{enumerate}
+\center ******THE END******
+\newpage    
+\end{document}
