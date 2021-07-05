@@ -3,7 +3,7 @@ name: Update directory hierarchy
 on:
   push:
     branches:
-      - main 
+      - master 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,5 +26,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: main
+          branch: master 
           github_token: ${{ secrets.GITHUB_TOKEN }}
