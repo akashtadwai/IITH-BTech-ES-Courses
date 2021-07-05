@@ -2,6 +2,7 @@
 **/*.git
 *.out
 **/Slides
+weights/
 
 # Python files
 __pycache__/
