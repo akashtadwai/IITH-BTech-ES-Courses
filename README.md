@@ -9,37 +9,34 @@ This repo contains codes and assignments of courses taught in IITH
 Raise an issue/ put up a pull request if any errors are found in the codes
 
 ## Structure
-
 <pre>
- ┬  
- ├ SEM1
-     ┬  intro-to-programming
+.
+├── SEM-1
+│   └── intro-programming
+├── SEM-2
+│   ├── Introduction to Data Structures
+│   └── intro-hdl
+├── SEM-3
+│   ├── Data Structures
+│   ├── NM-I
+│   └── Principles of Programming Languages-I
+├── SEM-4
+│   ├── Compilers
+│   └── ResearchInternship-CS2305
+├── SEM-5
+│   ├── Compilers-II
+│   ├── Computer-Architecture
+│   ├── DBMS-I
+│   ├── Foundations of ML
+│   ├── MA3140-Statistical Inference
+│   ├── Networks-I
+│   └── OperatingSystems-I
+└── SEM-6
+    ├── DBMS-2
+    ├── DeepLearning_for_Vision
+    ├── LinearOptimisation
+    ├── Networks-2
+    └── OS-2
 
- ├ SEM2
-     ┬  Introduction to Data Structures
-     ├  Intro to HDL
-
- ├ SEM3
-     ┬  Data Structures
-     ├  Numerical Methods-I
-     ├  POPL-I
-
- ├ SEM4
-     ┬  Compilers-I
-
- ├ SEM5
-     ┬  Compilers-II
-     ├  Computer Architecture
-     ├  DBMS-I
-     ├  Foundations of ML
-     ├  MA3140-Statistical Inference
-     ├  Networks-I
-     ├  OperatingSystems-I
-
- ├ SEM6
-     ┬  DBMS-II
-     ├  DeepLearning for Computer Vision
-     ├  Linear Optimization
-     ├  Computer Networks -II 
-     ├  Operating Systems - II 
+26 directories
 </pre>
