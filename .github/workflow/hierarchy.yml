@@ -1,0 +1,30 @@
+name: Update directory hierarchy
+
+on:
+  push:
+    branches:
+      - main 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: modify tree hierarchy for every push and commit changes
+        run: |
+          sed -i '/Structure/q0' README.md
+          echo "<pre>" >> README.md && tree -d -L 2 -n >> README.md && echo "</pre>" >> README.md
+          
+          git config --global user.name ${{ secrets.USER }}
+          git config --global user.email ${{ secrets.EMAIL }}
+
+          git add -A
+          git commit -m "Restructured the tree"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
