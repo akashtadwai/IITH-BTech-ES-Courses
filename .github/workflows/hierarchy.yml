@@ -3,7 +3,7 @@ name: Update directory hierarchy
 on:
   push:
     branches:
-      - master 
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,9 +15,15 @@ jobs:
 
       - name: modify tree hierarchy for every push and commit changes
         run: |
-          sed -i '/Structure/q0' README.md
-          echo "<pre>" >> README.md && tree -d -L 2 -n >> README.md && echo "</pre>" >> README.md
-          
+         sed -i '/^## Structure/!b
+          N;h
+          :1;N
+          /<\/pre>$/!b1
+          s/.*\n//
+          x;p
+          s/.*/tree -d -L 2 -n/e
+          G'README.md
+
           git config --global user.name ${{ secrets.USER }}
           git config --global user.email ${{ secrets.EMAIL }}
 
@@ -27,5 +33,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: master 
+          branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
