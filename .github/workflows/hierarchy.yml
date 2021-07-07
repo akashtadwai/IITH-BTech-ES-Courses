@@ -15,14 +15,14 @@ jobs:
 
       - name: modify tree hierarchy for every push and commit changes
         run: |
-         sed -i '/^## Structure/!b
+          sed -i '/^## Structure/!b
           N;h
           :1;N
           /<\/pre>$/!b1
           s/.*\n//
           x;p
           s/.*/tree -d -L 2 -n/e
-          G'README.md
+          G' README.md
 
           git config --global user.name ${{ secrets.USER }}
           git config --global user.email ${{ secrets.EMAIL }}
