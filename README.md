@@ -31,12 +31,14 @@ Raise an issue/ put up a pull request if any errors are found in the codes
 │   ├── MA3140-Statistical Inference
 │   ├── Networks-I
 │   └── OperatingSystems-I
-└── SEM-6
-    ├── DBMS-2
-    ├── DeepLearning_for_Vision
-    ├── LinearOptimisation
-    ├── Networks-2
-    └── OS-2
+├── SEM-6
+│   ├── DBMS-2
+│   ├── DeepLearning_for_Vision
+│   ├── LinearOptimisation
+│   ├── Networks-2
+│   └── OS-2
+└── SEM-7
+    └── FraudAnalytics
 
-26 directories
+28 directories
 </pre>
