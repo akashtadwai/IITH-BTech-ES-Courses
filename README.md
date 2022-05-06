@@ -37,8 +37,12 @@ Raise an issue/ put up a pull request if any errors are found in the codes
 │   ├── LinearOptimisation
 │   ├── Networks-2
 │   └── OS-2
-└── SEM-7
-    └── FraudAnalytics
+├── SEM-7
+│   └── FraudAnalytics
+└── SEM-8
+    ├── ElectricalMachines
+    ├── NetworkSecurity
+    └── SoftwareEngineering
 
-28 directories
+32 directories
 </pre>
