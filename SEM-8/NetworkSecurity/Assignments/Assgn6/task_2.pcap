@@ -1,0 +1,35 @@
+11:22:06.157316 IP6 fe80::216:3eff:fed0:afc8 > ff02::2: ICMP6, router solicitation, length 16
+11:22:10.118016 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [S], seq 2849863709, win 64240, options [mss 1460,sackOK,TS val 1872419866 ecr 0,nop,wscale 7], length 0
+11:22:10.118074 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [S.], seq 642033425, ack 2849863710, win 65160, options [mss 1460,sackOK,TS val 1056721699 ecr 1872419866,nop,wscale 7], length 0
+11:22:10.118087 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [.], ack 1, win 502, options [nop,nop,TS val 1872419866 ecr 1056721699], length 0
+11:22:10.118150 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [P.], seq 1:11, ack 1, win 502, options [nop,nop,TS val 1872419866 ecr 1056721699], length 10
+11:22:10.118154 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [.], ack 11, win 509, options [nop,nop,TS val 1056721699 ecr 1872419866], length 0
+11:22:10.118588 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [P.], seq 1:11, ack 11, win 509, options [nop,nop,TS val 1056721699 ecr 1872419866], length 10
+11:22:10.118612 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [.], ack 11, win 502, options [nop,nop,TS val 1872419866 ecr 1056721699], length 0
+11:22:10.118660 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [P.], seq 11:24, ack 11, win 502, options [nop,nop,TS val 1872419866 ecr 1056721699], length 13
+11:22:10.118665 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [.], ack 24, win 509, options [nop,nop,TS val 1056721699 ecr 1872419866], length 0
+11:22:10.118714 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [P.], seq 11:28, ack 24, win 509, options [nop,nop,TS val 1056721699 ecr 1872419866], length 17
+11:22:10.118720 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [.], ack 28, win 502, options [nop,nop,TS val 1872419866 ecr 1056721699], length 0
+11:22:10.120431 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [P.], seq 24:541, ack 28, win 502, options [nop,nop,TS val 1872419868 ecr 1056721699], length 517
+11:22:10.120444 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [.], ack 541, win 505, options [nop,nop,TS val 1056721701 ecr 1872419868], length 0
+11:22:10.131941 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [P.], seq 28:2225, ack 541, win 505, options [nop,nop,TS val 1056721713 ecr 1872419868], length 2197
+11:22:10.131949 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [.], ack 2225, win 499, options [nop,nop,TS val 1872419880 ecr 1056721713], length 0
+11:22:10.136689 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [P.], seq 541:2515, ack 2225, win 501, options [nop,nop,TS val 1872419884 ecr 1056721713], length 1974
+11:22:10.136715 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [.], ack 2515, win 500, options [nop,nop,TS val 1056721717 ecr 1872419884], length 0
+11:22:10.138418 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [P.], seq 2225:3280, ack 2515, win 501, options [nop,nop,TS val 1056721719 ecr 1872419884], length 1055
+11:22:10.138426 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [.], ack 3280, win 501, options [nop,nop,TS val 1872419886 ecr 1056721719], length 0
+11:22:10.138513 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [P.], seq 3280:4335, ack 2515, win 501, options [nop,nop,TS val 1056721719 ecr 1872419886], length 1055
+11:22:10.138517 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [.], ack 4335, win 499, options [nop,nop,TS val 1872419886 ecr 1056721719], length 0
+11:22:13.788711 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [P.], seq 2515:2548, ack 4335, win 499, options [nop,nop,TS val 1872423536 ecr 1056721719], length 33
+11:22:13.788766 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [.], ack 2548, win 501, options [nop,nop,TS val 1056725369 ecr 1872423536], length 0
+11:22:15.217532 ARP, Request who-has 172.31.0.2 tell 172.31.0.3, length 28
+11:22:15.217935 ARP, Reply 172.31.0.2 is-at 00:16:3e:d0:af:c8, length 28
+11:22:15.801531 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [P.], seq 4335:4362, ack 2548, win 501, options [nop,nop,TS val 1056727382 ecr 1872423536], length 27
+11:22:15.801557 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [.], ack 4362, win 501, options [nop,nop,TS val 1872425549 ecr 1056727382], length 0
+11:22:18.587472 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [P.], seq 2548:2580, ack 4362, win 501, options [nop,nop,TS val 1872428335 ecr 1056727382], length 32
+11:22:18.587515 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [.], ack 2580, win 501, options [nop,nop,TS val 1056730168 ecr 1872428335], length 0
+11:22:18.587663 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [F.], seq 2580, ack 4362, win 501, options [nop,nop,TS val 1872428335 ecr 1056730168], length 0
+11:22:18.593713 IP 172.31.0.2.6174 > 172.31.0.3.50804: Flags [F.], seq 4362, ack 2581, win 501, options [nop,nop,TS val 1056730174 ecr 1872428335], length 0
+11:22:18.593732 IP 172.31.0.3.50804 > 172.31.0.2.6174: Flags [.], ack 4363, win 501, options [nop,nop,TS val 1872428341 ecr 1056730174], length 0
+11:22:20.751609 IP6 fe80::216:3eff:fef5:65eb > ff02::2: ICMP6, router solicitation, length 16
+

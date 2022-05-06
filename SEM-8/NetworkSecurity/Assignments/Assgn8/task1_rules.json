@@ -1,0 +1,42 @@
+{
+    "BannedSrcIP": [
+        "10.0.0.1",
+        "any"
+    ],
+    "BannedSrcPrefixIP": [
+        "any",
+        "any"
+    ],
+    "BannedDestIP": [
+        "10.0.0.253",
+        "any"
+    ],
+    "BannedDestPrefixIP": [
+        "any",
+        "any"
+    ],
+    "BannedSrcPorts": [
+        "any",
+        "any"
+    ],
+    "BannedDestPorts": [
+        "any",
+        "any"
+    ],
+    "BannedProtocols": [
+        "any",
+        "6"
+    ],
+    "BannedSrcMAC": [
+        "any",
+        "any"
+    ],
+    "BannedDestMAC": [
+        "any",
+        "any"
+    ],
+    "Client/Server": [
+        "1",
+        "0"
+    ]
+} 

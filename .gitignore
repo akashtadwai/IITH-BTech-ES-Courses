@@ -1,5 +1,5 @@
 **/.vscode
-**/*.git
+
 *.out
 **/Slides
 weights/

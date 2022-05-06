@@ -1,0 +1,309 @@
+\documentclass[english,a4paper,12pt]{report}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{comment}
+\usepackage{iftex}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{tabularx}
+\usepackage{amsfonts}
+\usepackage{blindtext}
+\usepackage{qtree}
+\usepackage{multicol}
+\usepackage{makecell}
+\usepackage{amsmath,bm}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\restylefloat{figure}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\usepackage{minted}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{white},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+% \lstset{
+%  basicstyle=\footnotesize,
+%  language={[Objective]Caml},
+%  breaklines=true,
+%  tabsize=2,
+%  frame=single,
+%  numbers=left,
+%  title=\lstname,
+%  commentstyle=\color{mygreen},
+%  numberstyle=\small\color{mygray},
+%  stringstyle=\color{mymauve},
+%  showstringspaces=false,
+%  rulecolor=\color{black}
+% }
+
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%Code listing style named "mystyle"
+
+\usepackage{color}
+\usepackage[draft=false]{hyperref}
+\hypersetup{
+    colorlinks=true, % make the links colored
+    linkcolor=blue, % color TOC links in blue
+    urlcolor=blue, % color URLs in blue
+    linktoc=all % 'all' will create links for everything in the TOC
+}
+    
+\urlstyle{same}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{white},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,     
+  upquote=true,
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+\geometry{verbose,tmargin=4.5cm,bmargin=4cm,lmargin=1.5cm,rmargin=1cm,headheight=2.7cm,headsep=1.5cm,footskip=2cm}
+\usepackage{array}
+%
+\def \hsp {\hspace{3mm}}
+%
+\makeatletter
+\providecommand{\tabularnewline}{\\}
+\makeatother
+%
+\ifxetex
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\newfontfamily\nakulafont[AutoFakeBold=2]{Nakula}
+\newfontfamily\liberationfont{Liberation Sans Narrow}
+\newfontfamily\liberationsansfont{Liberation Sans}
+\fi
+%
+\usepackage{tikz}
+\usepackage{xcolor}
+%
+% 
+\definecolor{circleorange}{rgb}{1,0.17,0.08}
+\definecolor{darkorange}{rgb}{1,0.27,0.1}
+\definecolor{orange2}{rgb}{1,0.5,0.15}
+\definecolor{orange3}{rgb}{1,0.65,0.25}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\newcommand{\Omit}[1]{}
+\fancypagestyle{plain}{
+  \fancyhead[LO]
+  {
+\textbf{CS4443 - Software Engineering} \newline 
+\textbf {Indian Institute of Technology Hyderabad \newline
+Software Design\newline 
+Group: H16} \newline 
+	  }
+	  
+%
+	  \fancyhf[ROH]{
+\begin{tikzpicture}[scale=0.25,every node/.style={transform shape}]
+\draw [fill=circleorange,circleorange] (5,10) circle (1.15); 
+\fill [darkorange] (5.06,8) -- (5.06,2) -- (7.3,1.2) -- (7.3,8.8) -- (5.06,8);
+\fill [darkorange] (4.94,8) -- (4.94,2) -- (2.7,1.2) -- (2.7,8.8) -- (4.94,8);
+\fill [orange2]    (7.4,8.4) -- (7.4,1.6) -- (8.2,1.2) -- (8.2,8.8) -- (7.4,8.4);
+\fill [orange2]    (2.6,8.4) -- (2.6,1.6) -- (1.8,1.2) -- (1.8,8.8) -- (2.6,8.4);
+\fill [orange3]    (8.3,8.4) -- (8.3,1.6) -- (9.0,1.2) -- (9.0,8.8) -- (8.3,8.4);
+\fill [orange3]    (1.7,8.4) -- (1.7,1.6) -- (1.0,1.2) -- (1.0,8.8) -- (1.7,8.4);
+\fill [yellow1]    (9.1,8.4) -- (9.1,1.6) -- (9.7,1.2) -- (9.7,8.8) -- (9.1,8.4);
+\fill [yellow1]    (0.9,8.4) -- (0.9,1.6) -- (0.3,1.2) -- (0.3,8.8) -- (0.9,8.4);
+\ifxetex
+\node [scale=2.1] at (5,-0.1)  {   {\bf {\nakulafont  भारतीय प्रौद्योगिकी संस्थान हैदराबाद }} };
+\node [scale=1.8] at (5,-1.2) {   {\bf {\liberationsansfont Indian Institute of Technology Hyderabad}} };
+\fi
+\end{tikzpicture}
+		  }
+%
+\renewcommand\headrule
+ {
+\begin{tikzpicture}
+\definecolor{yellow1}{rgb}{0.95,0.77,0.2}
+\draw[line width=0.75mm, yellow1] (0,0) -- (\textwidth,0);
+\end{tikzpicture} 
+ }}
+ \pagestyle{plain}
+
+
+\title{\textbf{\underline{\Huge{Software Design}}}\\~\\
+\textbf{Conference Management System}\\~\\ 
+Professor Manish Singh\\
+}
+\author{Vinta Reethu \and Havya Sree K \and Dheekshitha B \and Akash Tadwai }
+\date{\today}
+\usepackage{titlesec}
+
+\begin{document}
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-10pt}{40pt}
+\maketitle
+\tableofcontents
+\newpage
+
+\chapter{Overview}
+\textbf{\textit{Conference Management System}} is a web-based application that handles a variety of aspects of conference management, including user registration, conference registration, paper submissions by authors, reviewer registration, papers assignment for reviewers, review submission, conference notifications, paper acceptance, display of paper reviews. 
+
+\section{Data Flow Diagram}
+DFD provides an overview of how this system processes  data and meets various constraints.  DFD provides an overview of how this system processes  data and meets various constraints.
+
+\begin{figure}[h!]
+\centering
+ \includegraphics[keepaspectratio,width=18cm,height=12cm]{SD-Images/DFD.pdf}
+\caption{Data Flow Diagram}
+\end{figure}
+
+\section{Structured Chart}
+\begin{figure}[h!]
+\centering
+ \includegraphics[width=15cm,height=6cm]{SD-Images/firstlevel.pdf}  
+\caption{First Level Factoring}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+ \includegraphics[width=18cm,height=10cm]{SD-Images/input-factoring.pdf}  
+\caption{Input Factoring}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=18cm,height=10cm]{SD-Images/Central_transform.pdf}  
+\caption{Central Transform}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=18cm,height=8cm]{SD-Images/output-factoring.pdf}  
+\caption{Output Factoring}
+\end{figure}
+
+\section{Top Three Modules in terms of fan-in and fan-out}
+
+\begin{enumerate}
+    \item \textbf{Module}: get\_conf\_and\_user\_details\\ 
+   \textbf{ fan-in}: 1 \\ 
+    \textbf{fan-out}: 5 
+    \item \textbf{Module}: reviewer\_assignment\_allocation \\ 
+    \textbf{fan-in}: 1 \\ 
+    \textbf{fan-out}: 2 
+    \item \textbf{Module}: output\_data \\ 
+    \textbf{fan-in}: 1 \\ 
+    \textbf{fan-out}: 3 
+\end{enumerate}
+
+\section{Complex and Error Prone Modules}
+\begin{enumerate}
+    \item \textbf{get\_conf\_user\_info} is the top-level module in input-factoring. since the number of subordinate modules is 5, the dependency of this module on its subordinates increases. It also makes the flow of information among all the subordinate modules difficult. Thus this is the most complex and error prone module.
+    
+    \item \textbf{output\_data}, which is the top-level module in output-factoring, Its
+fan-out is 3. It is calling different subordinate modules depending on the
+different outputs of the conference such as  acceptance status of the  papers, and all the events details for notifying the users. Thus outflow of this module is more as compared to others. Thus this module is
+complex relative to other modules.
+\end{enumerate}
+%post-acceptance to be filled
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[width=18cm,height=10cm]{SD-Images/Central_transform.pdf}  
+% \caption{Central Transform}
+% \end{figure
+\section{Summary Table}
+{
+
+\begin{center}
+    \begin{longtable} { | p{1.5cm} | p{8cm}| p{4cm}|}
+\hline 
+\textbf{Sl No.} & 
+\textbf{Module} & \textbf{LOC} \\ 
+\hline 
+ 1 & main & 40 \\ \hline 
+ 2 & get\_conf\_and\_user\_details & 100 \\ \hline 
+ 3 & user\_account\_details & 10\\ \hline 
+ 4  & validate\_user\_account\_details & 20 \\\hline 
+ 5 & get\_login\_credentials & 20\\ \hline 
+ 6 & conference\_details & 30\\ \hline 
+ 7 & approve\_conference\_details & 30\\ 
+ \hline 
+ 8 & get\_conference\_details & 50\\ 
+ \hline 
+ 9 &  paper\_submission & 30\\ 
+ \hline 
+ 10 & review\_submission & 20\\ 
+ \hline 
+ 11 & camera\_ready\_submission & 30\\ 
+ \hline
+12 & \makecell { reviewer\_assignment \\ 
+\_allocation} & 40\\ 
+\hline 
+13 & reviewer\_selection & 50\\ \hline 
+14 &  paper\_allocation\_to\_reviewer & 30\\ \hline  
+15 & map\_papers\_to\_reviewers & 150\\ 
+\hline 
+16 & output\_data & 40 \\
+\hline 
+17 & paper\_acceptance\_decision & 40\\ 
+\hline 
+18 & paper\_acceptance\_algorithm & 70\\ 
+\hline 
+19 & Notifications & 200\\
+\hline 
+20 & Display\_Reviews & 50\\ 
+\hline 
+    \caption{Summary Table}
+    \label{tab:summary_table}
+    \end{longtable}
+\end{center}
+}
+Total there are \textbf{20} modules.
+Expected LOC of the software is \textbf{1050}. This LOC is for the core code. Determining LOC for the front-end is difficult. Rough estimate for the front-end would be \textbf{2000} LOC.
+\chapter{Interfaces}
+\lstinputlisting[language=Python]{SD-Images/interfaces.py}
+
+
+\end{document}
