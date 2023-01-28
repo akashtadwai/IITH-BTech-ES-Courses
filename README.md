@@ -1,4 +1,4 @@
-# Courses in IITH ES Curriculum
+# Courses in IITH ES-CSE Curriculum
 
 This repo contains codes and assignments of courses taught in IITH
 
